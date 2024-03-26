@@ -23,10 +23,10 @@ function CallForSpeakers(
   return (
     <>
       <Button
-        class="px-6 py-3 bg-teal-950 rounded-[104.66px] border border-teal-950 flex justify-center items-center gap-2"
+        class="w-full max-w-[398px] px-2 py-3 bg-[#113032] rounded-[104.66px] border border-[#113032] flex justify-center items-center gap-2"
         onClick={() => open.value = true}
       >
-        <p class="text-white font-medium  text-[24px] text-center text-nowrap">
+        <p class="text-white font-medium  text-[22px] text-center d">
           I wanna Speak!
           <span class="font-normal">
             {" "} (girls only)

@@ -256,7 +256,7 @@ export default function DecoDay({
 }) {
   return (
     <div class="flex flex-col bg-black h-full w-full">
-      <div class="flex flex-col gap-12 p-4  bg-black  h-full w-screen box-border">
+      <div class="flex flex-col gap-12 p-4 items-center  bg-black  h-full w-screen box-border">
         {/* Gradiente */}
         <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center">
           <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
@@ -299,7 +299,7 @@ export default function DecoDay({
             <br />contributions in DevOps and SRE
           </div>
         </div>
-        <div class="z-10 px-4 lg:px-0flex flex-col items-center justify-center gap-6 w-full">
+        <div class="z-10 flex flex-col items-center justify-center gap-6 w-full">
           <CallForSpeakers />
           <SaveYourSpot />
         </div>

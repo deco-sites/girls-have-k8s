@@ -2,9 +2,9 @@ import Button from "deco-sites/girls-have-k8s/components/ui/Button.tsx";
 import Icon from "deco-sites/girls-have-k8s/components/ui/Icon.tsx";
 import Modal from "deco-sites/girls-have-k8s/components/ui/Modal.tsx";
 import { useId } from "deco-sites/girls-have-k8s/sdk/useId.ts";
-import { useSignal } from "@preact/signals";
 import type { ImageObject } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
+import { useSignal } from "@preact/signals";
 import SYSInput from "deco-sites/girls-have-k8s/islands/SYSInput.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
 
@@ -31,7 +31,7 @@ function LearnAbout(
   return (
     <>
       <div
-        class="z-10 p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
+        class="w-full max-w-[398px] z-10 p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
         onClick={() => open.value = true}
       >
         <img
