@@ -28,10 +28,10 @@ function LearnAbout(
   return (
     <>
       <Button
-        class="px-6 py-3 rounded-[104.66px] border border-neutral-400 flex items-center gap-2"
+        class="px-6 py-3 bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex items-center gap-2"
         onClick={() => open.value = true}
       >
-        <p class="text-neutral-400 text-sm font-medium">
+        <p class="text-neutral-400 font-medium text-sm">
           Learn about Fernanda
         </p>
         <div class="w-6 h-6">
