@@ -30,18 +30,33 @@ function LearnAbout(
 
   return (
     <>
-      <Button
-        class="px-2 py-0 bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex justify-center items-center gap-1"
+      <div
+        class="p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
         onClick={() => open.value = true}
       >
-        <p class="text-neutral-400 font-medium text-[12px]">
-          Learn about Fernanda
-        </p>
-        <div class="w-6 h-6">
-          <Icon id="ArrowRight" size={24} />
+        <img
+          class="w-[91px] h-[91px] rounded-[100px]"
+          src={image}
+        />
+        <div class="flex-col items-start gap-2 flex">
+          <div class="flex-col justify-center items-start flex">
+            <div class="text-emerald-500 text-sm font-medium leading-[21px]">
+              🌟 Keynote Speaker
+            </div>
+            <div class="text-white text-base font-bold leading-normal">
+              Fernanda Weiden
+            </div>
+          </div>
+          <div class="px-2 py-[2px] bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex items-center">
+            <p class="text-neutral-400 font-medium text-[12px]">
+              Learn about Fernanda
+            </p>
+            <div class="w-6 h-6">
+              <Icon id="ArrowRight" size={24} />
+            </div>
+          </div>
         </div>
-      </Button>
-
+      </div>
       <Modal
         id={id}
         open={open.value}

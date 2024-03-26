@@ -306,23 +306,7 @@ export default function DecoDay({
             <SaveYourSpot />
           </div>
 
-          <div class="p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex">
-            <img
-              class="w-[91px] h-[91px] rounded-[100px]"
-              src={imageAbout}
-            />
-            <div class="flex-col items-start gap-2 flex">
-              <div class="flex-col justify-center items-start flex">
-                <div class="text-emerald-500 text-sm font-medium leading-[21px]">
-                  🌟 Keynote Speaker
-                </div>
-                <div class="text-white text-base font-bold leading-normal">
-                  Fernanda Weiden
-                </div>
-              </div>
-              <LearnAbout image={imageAbout} />
-            </div>
-          </div>
+          <LearnAbout image={imageAbout} />
         </div>
       </div>
     </div>
