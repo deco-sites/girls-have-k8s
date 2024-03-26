@@ -31,15 +31,15 @@ function LearnAbout(
   return (
     <>
       <div
-        class="w-full max-w-[398px] z-10 p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
+        class="w-full max-lg:max-w-[398px] z-10 p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
         onClick={() => open.value = true}
       >
         <img
-          class="w-[91px] h-[91px] rounded-[100px]"
+          class="w-[91px] h-[91px] lg:w-36 lg:h-36 rounded-[100px]"
           src={image}
         />
-        <div class="flex-col items-start gap-2 flex">
-          <div class="flex-col justify-center items-start flex">
+        <div class="flex-col items-start gap-2 lg:gap-4 flex">
+          <div class="flex-col lg:flex-row lg:gap-2 justify-center items-start flex">
             <div class="text-emerald-500 text-sm font-medium leading-[21px]">
               🌟 Keynote Speaker
             </div>
@@ -47,7 +47,14 @@ function LearnAbout(
               Fernanda Weiden
             </div>
           </div>
-          <div class="px-2 py-[2px] bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex items-center">
+
+          <div class="hidden lg:block">
+            <p class="max-w-[500.02px] text-zinc-400 text-base font-normal leading-normal text-wrap">
+              Tech leader, former CTO of VTEX, rich history at companies like
+              Meta and Google.
+            </p>
+          </div>
+          <div class="px-2 py-[2px]  bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex items-center">
             <p class="text-neutral-400 font-medium text-[12px]">
               Learn about Fernanda
             </p>

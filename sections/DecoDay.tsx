@@ -256,7 +256,8 @@ export default function DecoDay({
 }) {
   return (
     <div class="flex flex-col bg-black h-full w-full">
-      <div class="flex flex-col gap-12 p-4 items-center  bg-black  h-full w-screen box-border">
+      {/* Mobile */}
+      <div class="lg:hidden flex flex-col gap-12 p-4 items-center  bg-black  h-full w-screen box-border">
         {/* Gradiente */}
         <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center">
           <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
@@ -285,16 +286,16 @@ export default function DecoDay({
             <span>deco.cx/discord</span>
           </div>
         </div>
-        <div class="z-10 flex flex-col items-center gap-6">
+        <div class="z-10 flex flex-col items-center">
           {/* <Icon id="GirlsBanner" size={400} class="w-full h-full" /> */}
           <div class="w-full max-h-[185px]">
             <img
-              class="w-full h-full object-scale-down"
+              class="object-contain"
               src="../girls-banner.png"
             />
           </div>
 
-          <div class="z-10 self-stretch text-center text-white text-lg font-normal">
+          <div class="mt-6 text-center text-white text-lg font-normal">
             An event dedicated to the female{" "}
             <br />contributions in DevOps and SRE
           </div>
@@ -305,6 +306,91 @@ export default function DecoDay({
         </div>
 
         <LearnAbout image={imageAbout} />
+      </div>
+
+      {/* Desktop */}
+      <div class="hidden lg:flex flex-col gap-12 p-4  bg-black  h-screen w-screen box-border">
+        {/* Gradiente */}
+        <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center">
+          <div class="lg:opacity-50 bg-[#02F67C] w-[16rem] h-[19rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
+          </div>
+          <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
+          </div>
+        </div>
+
+        <div class="z-10 flex flex-row justify-center leading-[150%] self-end px-6 py-[30px]">
+          <div
+            class={`open-button w-auto flex justify-center gap-[3px] lg:gap-4 text-white text-xl font-normal leading-[21px]`}
+          >
+            <Icon
+              id="CalendarEvent"
+              size={20}
+              class="w-[13px] lg:w-[17.90px]"
+            />
+            <span>Monday April 4th, 12pm - 2pm BRT</span>
+          </div>
+          <div class="h-[21px] self-stretch origin-top-left mx-8 border border-white">
+          </div>
+          <div
+            class={`open-button w-auto flex justify-center gap-[3px] lg:gap-4 text-white text-xl font-normal font-['Albert Sans'] leading-[21px]`}
+          >
+            <Icon id="MapPin" size={20} class="w-[13px] lg:w-[17.90px]" />
+            <span>deco.cx/discord</span>
+          </div>
+        </div>
+        {/* Content */}
+        <div class="z-10 flex flex-col items-center justify-center pt-16">
+          <div class="flex gap-20">
+            <div class="items-center flex flex-col gap-[54px]">
+              <div class="flex flex-col">
+                <Icon id="GirlsBanner" size={400} class="w-[450px] h-[250px]" />
+                {
+                  /* <div class="w-full max-h-[212.08px]">
+                  <img
+                    class="w-full h-full object-scale-down"
+                    src="../girls-banner.png"
+                  />
+                </div> */
+                }
+
+                <div class="self-stretch text-center text-white text-lg font-normal">
+                  An event dedicated to the female{" "}
+                  <br />contributions in DevOps and SRE
+                </div>
+              </div>
+              <div class="flex flex-col items-center justify-center gap-6 w-full">
+                <CallForSpeakers />
+                <SaveYourSpot />
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-10">
+              <div class="w-[662.02px] h-[188px] p-8 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 inline-flex">
+                <div class="self-stretch text-white text-2xl font-bold font-['Albert Sans'] leading-9">
+                  Join us for an exclusive virtual lunch session!
+                </div>
+                <div class="self-stretch text-zinc-400 text-base font-normal font-['Albert Sans'] leading-normal">
+                  Together we will explore the future of scalability,
+                  reliability, performance, and efficiency in technology. This
+                  event is a celebration of female voices in tech, but everyone
+                  is invited to attend and contribute.
+                </div>
+              </div>
+              <LearnAbout image={imageAbout} />
+            </div>
+          </div>
+
+          <div class="flex self-end pr-40">
+            <p class="text-white text-base font-bold uppercase">
+              PRESENT BY
+            </p>
+            <Icon
+              class="w-[89.57px] h-[19.97px]"
+              id="DecoGreenLogo"
+              size={24}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
