@@ -13,6 +13,7 @@ import Image from "apps/website/components/Image.tsx";
 import SaveYourSpot from "../islands/modals/SaveYourSpot.tsx";
 import LearnAbout from "../islands/modals/LearnAbout.tsx";
 import CallForSpeakers from "../islands/modals/CallForSpeakers.tsx";
+import { ImageWidget } from "apps/admin/widgets.ts";
 
 /**
  * @title ToggleDarkMode
@@ -209,6 +210,8 @@ export interface Props {
   gravitySensation?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   /** @format html */
   title?: string;
+
+  imageAbout?: ImageWidget;
 }
 
 const AnimatedElementMap: Record<
@@ -244,6 +247,7 @@ export default function DecoDay({
   isMobile,
   gravitySensation,
   title,
+  imageAbout,
 }: Omit<Props, "isMobile"> & {
   animationElements: AnimationElement[];
   animationElementsMobile?: AnimationElement[];
@@ -301,12 +305,12 @@ export default function DecoDay({
             <SaveYourSpot />
             <CallForSpeakers />
           </div>
-          <div class="p-2 bg-white bg-opacity-5 rounded-[999px] border border-white border-opacity-20 justify-start items-center gap-2 inline-flex">
+          <div class="p-2 bg-white bg-opacity-5 rounded-[999px] border border-white border-opacity-20 justify-start items-center gap-2 flex">
             <img
               class="w-[91px] h-[91px] rounded-[100px]"
-              src="https://via.placeholder.com/91x91"
+              src={imageAbout}
             />
-            <div class="flex-col justify-center items-start gap-2 inline-flex">
+            <div class="flex-col justify-center items-start gap-2 flex">
               <div class="flex-col justify-center items-start flex">
                 <div class="text-emerald-500 text-sm font-medium leading-[21px]">
                   🌟 Keynote Speaker
@@ -315,7 +319,7 @@ export default function DecoDay({
                   Fernanda Weiden
                 </div>
               </div>
-              <LearnAbout />
+              <LearnAbout image={imageAbout} />
             </div>
           </div>
         </div>

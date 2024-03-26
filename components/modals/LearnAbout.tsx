@@ -6,11 +6,13 @@ import { useSignal } from "@preact/signals";
 import type { ImageObject } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import SYSInput from "deco-sites/girls-have-k8s/islands/SYSInput.tsx";
+import { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Props {
   title?: string;
   subtitle?: string;
   description?: string;
+  image?: ImageWidget;
 }
 
 function LearnAbout(
@@ -20,6 +22,7 @@ function LearnAbout(
       "Tech leader from LatAm, former CTO of VTEX, with a rich history at companies like Meta and Google.",
     description =
       "Fernanda will share her invaluable insights. She dedicated her career to scaling systems and organizations. She brings a wealth of knowledge on what it means to be an SRE and the vital role it plays in today's tech landscape. She is deeply passionate about mentoring, fostering growth, and promoting the inclusion of women in the technology workforce.",
+    image,
   }: Props,
 ) {
   const id = useId();
@@ -28,7 +31,7 @@ function LearnAbout(
   return (
     <>
       <Button
-        class="px-6 py-3 bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex items-center gap-2"
+        class="bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex items-center gap-1"
         onClick={() => open.value = true}
       >
         <p class="text-neutral-400 font-medium text-sm">
@@ -46,7 +49,7 @@ function LearnAbout(
           open.value = false;
         }}
       >
-        <div class="modal-box max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
+        <div class="modal-box lg:max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
           <div class="flex justify-between items-center">
             <div class="flex">
               <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase">
@@ -69,8 +72,8 @@ function LearnAbout(
           <div class="flex flex-col lg:flex-row justify-center gap-6 ">
             <div class="h-[286px] w-full lg:max-h-[376px]">
               <Image
-                class="h-full w-full object-scale-down rounded-[20px] border border-emerald-500"
-                src="/images/about.png"
+                class="h-full w-full object-cover rounded-[20px] border border-emerald-500"
+                src={image || "/images/about.png"}
                 alt="Deco Day"
                 width={150}
                 height={150}

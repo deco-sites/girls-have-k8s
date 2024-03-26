@@ -26,7 +26,7 @@ function CallForSpeakers(
         class="px-6 py-3 bg-teal-950 rounded-[104.66px] border border-teal-950 flex items-center gap-2"
         onClick={() => open.value = true}
       >
-        <p class="text-white font-medium  text-2xl text-center">
+        <p class="text-white font-medium  text-2xl text-center text-nowrap">
           I wanna Speak!
           <span class="font-normal">
             {" "} (girls only)
