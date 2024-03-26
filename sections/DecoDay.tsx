@@ -258,16 +258,16 @@ export default function DecoDay({
     <div class="flex flex-col bg-black lg:flex-row h-screen w-screen overflow-hidden">
       <div class="relative h-screen lg:h-screen w-screen overflow-clip">
         <div id="canvas" class="absolute z-[0]"></div>
-        <div class="absolute z-[0] flex flex-col gap-12 p-4 items-center bg-black  h-full w-screen box-border">
+        <div class="absolute z-[0] flex flex-col gap-12 p-4  bg-black  h-full w-screen box-border">
           {/* Gradiente */}
-          <div class="h-full top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center z-[-10]">
+          <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center z-[-10]">
             <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
             </div>
             <div class="lg:opacity-50 bg-[#02F67C] w-[16rem] h-[19rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
             </div>
           </div>
 
-          <div class="px-4 justify-between items-center flex">
+          <div class="px-4 self-center">
             <Icon id="DecoLogo" class="w-[111px] h-[31px]" />
           </div>
 
@@ -302,66 +302,13 @@ export default function DecoDay({
             </div>
           </div>
           <div class="px-4 lg:px-0 z-10 flex flex-col items-center justify-center gap-6 w-full">
-            <SaveYourSpot />
             <CallForSpeakers />
+            <SaveYourSpot />
           </div>
-          <div class="p-2 bg-white bg-opacity-5 rounded-[999px] border border-white border-opacity-20 justify-start items-center gap-2 flex">
-            <img
-              class="w-[91px] h-[91px] rounded-[100px]"
-              src={imageAbout}
-            />
-            <div class="flex-col justify-center items-start gap-2 flex">
-              <div class="flex-col justify-center items-start flex">
-                <div class="text-emerald-500 text-sm font-medium leading-[21px]">
-                  🌟 Keynote Speaker
-                </div>
-                <div class="text-white text-base font-bold leading-normal">
-                  Fernanda Weiden
-                </div>
-              </div>
-              <LearnAbout image={imageAbout} />
-            </div>
-          </div>
-        </div>
-        <div id="floatingElements" class="absolute z-0 invisible">
-          {isMobile === "desktop"
-            ? animationElements.map((elem: AnimationElement) =>
-              AnimatedElementMap[elem.id](elem)
-            )
-            : animationElementsMobile.map((elem: AnimationElement) =>
-              AnimatedElementMap[elem.id](elem)
-            )}
+
+          <LearnAbout image={imageAbout} />
         </div>
       </div>
-      <script type="module" src="/matter-script.js" />
-      {gravitySensation === 1 && (
-        <div class="hidden" data-prop-editavel="0.1">
-        </div>
-      )}
-      {gravitySensation === 2 && (
-        <div class="hidden" data-prop-editavel="0.3">
-        </div>
-      )}
-      {gravitySensation === 3 && (
-        <div class="hidden" data-prop-editavel="0.6">
-        </div>
-      )}
-      {gravitySensation === 4 && (
-        <div class="hidden" data-prop-editavel="1">
-        </div>
-      )}
-      {gravitySensation === 5 && (
-        <div class="hidden" data-prop-editavel="1.5">
-        </div>
-      )}
-      {gravitySensation === 6 && (
-        <div class="hidden" data-prop-editavel="2">
-        </div>
-      )}
-      {gravitySensation === 7 && (
-        <div class="hidden" data-prop-editavel="3">
-        </div>
-      )}
     </div>
   );
 }

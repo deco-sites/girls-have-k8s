@@ -46,7 +46,7 @@ function Modal(props: Props) {
         class="modal-toggle"
         onChange={(e) => e.currentTarget.checked === false && onClose?.()}
       />
-      <div class="modal transition-all duration-1000 ease-in-out backdrop-blur-sm">
+      <div class="modal backdrop-blur-sm">
         {!lazy.value && children}
         <label class="modal-backdrop" for={id}>Close</label>
       </div>
