@@ -18,6 +18,7 @@ function SearchbarModal({ searchbar }: Props) {
 
   return (
     <Modal
+      id="searchbar-modal"
       loading="lazy"
       open={displaySearchPopup.value}
       onClose={() => displaySearchPopup.value = false}

@@ -9,6 +9,7 @@ import * as $AddToCartButton_shopify from "./islands/AddToCartButton/shopify.tsx
 import * as $AddToCartButton_vnda from "./islands/AddToCartButton/vnda.tsx";
 import * as $AddToCartButton_vtex from "./islands/AddToCartButton/vtex.tsx";
 import * as $AddToCartButton_wake from "./islands/AddToCartButton/wake.tsx";
+import * as $CFSInput from "./islands/CFSInput.tsx";
 import * as $Header_Buttons from "./islands/Header/Buttons.tsx";
 import * as $Header_Cart_linx from "./islands/Header/Cart/linx.tsx";
 import * as $Header_Cart_nuvemshop from "./islands/Header/Cart/nuvemshop.tsx";
@@ -21,12 +22,16 @@ import * as $Header_Searchbar from "./islands/Header/Searchbar.tsx";
 import * as $Newsletter from "./islands/Newsletter.tsx";
 import * as $OutOfStock from "./islands/OutOfStock.tsx";
 import * as $ProductImageZoom from "./islands/ProductImageZoom.tsx";
+import * as $SYSInput from "./islands/SYSInput.tsx";
 import * as $SearchControls from "./islands/SearchControls.tsx";
 import * as $ShippingSimulation from "./islands/ShippingSimulation.tsx";
 import * as $ShowMore from "./islands/ShowMore.tsx";
 import * as $SliderJS from "./islands/SliderJS.tsx";
 import * as $WishlistButton_vtex from "./islands/WishlistButton/vtex.tsx";
 import * as $WishlistButton_wake from "./islands/WishlistButton/wake.tsx";
+import * as $modals_CallForSpeakers from "./islands/modals/CallForSpeakers.tsx";
+import * as $modals_LearnAbout from "./islands/modals/LearnAbout.tsx";
+import * as $modals_SaveYourSpot from "./islands/modals/SaveYourSpot.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -40,6 +45,7 @@ const manifest = {
     "./islands/AddToCartButton/vnda.tsx": $AddToCartButton_vnda,
     "./islands/AddToCartButton/vtex.tsx": $AddToCartButton_vtex,
     "./islands/AddToCartButton/wake.tsx": $AddToCartButton_wake,
+    "./islands/CFSInput.tsx": $CFSInput,
     "./islands/Header/Buttons.tsx": $Header_Buttons,
     "./islands/Header/Cart/linx.tsx": $Header_Cart_linx,
     "./islands/Header/Cart/nuvemshop.tsx": $Header_Cart_nuvemshop,
@@ -52,12 +58,16 @@ const manifest = {
     "./islands/Newsletter.tsx": $Newsletter,
     "./islands/OutOfStock.tsx": $OutOfStock,
     "./islands/ProductImageZoom.tsx": $ProductImageZoom,
+    "./islands/SYSInput.tsx": $SYSInput,
     "./islands/SearchControls.tsx": $SearchControls,
     "./islands/ShippingSimulation.tsx": $ShippingSimulation,
     "./islands/ShowMore.tsx": $ShowMore,
     "./islands/SliderJS.tsx": $SliderJS,
     "./islands/WishlistButton/vtex.tsx": $WishlistButton_vtex,
     "./islands/WishlistButton/wake.tsx": $WishlistButton_wake,
+    "./islands/modals/CallForSpeakers.tsx": $modals_CallForSpeakers,
+    "./islands/modals/LearnAbout.tsx": $modals_LearnAbout,
+    "./islands/modals/SaveYourSpot.tsx": $modals_SaveYourSpot,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
