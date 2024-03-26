@@ -6,7 +6,7 @@ document.body.style.overflow = 'hidden';
 
 const toggles = document.querySelectorAll('[data-toggle-darkmode]');
 
-const propEditavel = document.querySelector('[data-prop-editavel]').dataset.propEditavel;
+const propEditavel = document.querySelector('[data-prop-editavel]')?.dataset?.propEditavel || 1;
 
 const screenSize = window.innerWidth;
 const screenSizeHeight = window.innerHeight
