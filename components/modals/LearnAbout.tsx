@@ -2,9 +2,9 @@ import Button from "deco-sites/girls-have-k8s/components/ui/Button.tsx";
 import Icon from "deco-sites/girls-have-k8s/components/ui/Icon.tsx";
 import Modal from "deco-sites/girls-have-k8s/components/ui/Modal.tsx";
 import { useId } from "deco-sites/girls-have-k8s/sdk/useId.ts";
-import { useSignal } from "@preact/signals";
 import type { ImageObject } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
+import { useSignal } from "@preact/signals";
 import SYSInput from "deco-sites/girls-have-k8s/islands/SYSInput.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
 
@@ -31,7 +31,7 @@ function LearnAbout(
   return (
     <>
       <div
-        class="p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
+        class="w-full max-w-[398px] z-10 p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
         onClick={() => open.value = true}
       >
         <img
@@ -64,7 +64,7 @@ function LearnAbout(
           open.value = false;
         }}
       >
-        <div class="modal-box lg:max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
+        <div class="z-10 modal-box lg:max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
           <div class="flex justify-between items-center">
             <div class="flex">
               <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase">

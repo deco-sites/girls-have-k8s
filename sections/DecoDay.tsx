@@ -255,59 +255,56 @@ export default function DecoDay({
   isMobile: string;
 }) {
   return (
-    <div class="flex flex-col bg-black lg:flex-row h-screen w-screen overflow-hidden">
-      <div class="relative h-screen lg:h-screen w-screen overflow-clip">
-        <div id="canvas" class="absolute z-[0]"></div>
-        <div class="absolute z-[0] flex flex-col gap-12 p-4  bg-black  h-full w-screen box-border">
-          {/* Gradiente */}
-          <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center z-[-10]">
-            <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
-            </div>
-            <div class="lg:opacity-50 bg-[#02F67C] w-[16rem] h-[19rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
-            </div>
+    <div class="flex flex-col bg-black h-full w-full">
+      <div class="flex flex-col gap-12 p-4 items-center  bg-black  h-full w-screen box-border">
+        {/* Gradiente */}
+        <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center">
+          <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
           </div>
-
-          <div class="px-4 self-center">
-            <Icon id="DecoLogo" class="w-[111px] h-[31px]" />
+          <div class="lg:opacity-50 bg-[#02F67C] w-[16rem] h-[19rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
           </div>
-
-          <div class="flex flex-row justify-center leading-[150%]">
-            <div
-              class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal leading-[21px]`}
-            >
-              <Icon id="CalendarEvent" size={20} class="w-[13px] lg:w-auto" />
-              <span>Monday April 4th, 12pm - 2pm BRT</span>
-            </div>
-            <div class="h-[21px] self-stretch origin-top-left mx-2 border border-white">
-            </div>
-            <div
-              class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal font-['Albert Sans'] leading-[21px]`}
-            >
-              <Icon id="MapPin" size={20} class="w-[13px] lg:w-auto" />
-              <span>deco.cx/discord</span>
-            </div>
-          </div>
-          <div class="flex flex-col items-center gap-6">
-            {/* <Icon id="GirlsBanner" size={400} class="w-full h-full" /> */}
-            <div class="w-full max-h-[185px]">
-              <img
-                class="w-full h-full object-scale-down"
-                src="../girls-banner.png"
-              />
-            </div>
-
-            <div class="self-stretch text-center text-white text-lg font-normal">
-              An event dedicated to the female{" "}
-              <br />contributions in DevOps and SRE
-            </div>
-          </div>
-          <div class="px-4 lg:px-0 z-10 flex flex-col items-center justify-center gap-6 w-full">
-            <CallForSpeakers />
-            <SaveYourSpot />
-          </div>
-
-          <LearnAbout image={imageAbout} />
         </div>
+
+        <div class="z-10 px-4 self-center">
+          <Icon id="DecoLogo" class="w-[111px] h-[31px]" />
+        </div>
+
+        <div class="z-10 flex flex-row justify-center leading-[150%]">
+          <div
+            class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal leading-[21px]`}
+          >
+            <Icon id="CalendarEvent" size={20} class="w-[13px] lg:w-auto" />
+            <span>Monday April 4th, 12pm - 2pm BRT</span>
+          </div>
+          <div class="h-[21px] self-stretch origin-top-left mx-2 border border-white">
+          </div>
+          <div
+            class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal font-['Albert Sans'] leading-[21px]`}
+          >
+            <Icon id="MapPin" size={20} class="w-[13px] lg:w-auto" />
+            <span>deco.cx/discord</span>
+          </div>
+        </div>
+        <div class="z-10 flex flex-col items-center gap-6">
+          {/* <Icon id="GirlsBanner" size={400} class="w-full h-full" /> */}
+          <div class="w-full max-h-[185px]">
+            <img
+              class="w-full h-full object-scale-down"
+              src="../girls-banner.png"
+            />
+          </div>
+
+          <div class="z-10 self-stretch text-center text-white text-lg font-normal">
+            An event dedicated to the female{" "}
+            <br />contributions in DevOps and SRE
+          </div>
+        </div>
+        <div class="z-10 flex flex-col items-center justify-center gap-6 w-full">
+          <CallForSpeakers />
+          <SaveYourSpot />
+        </div>
+
+        <LearnAbout image={imageAbout} />
       </div>
     </div>
   );
