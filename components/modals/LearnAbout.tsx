@@ -31,7 +31,7 @@ function LearnAbout(
   return (
     <>
       <Button
-        class="px-2 py-1 bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex justify-center items-center gap-1"
+        class="px-2 py-0 bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex justify-center items-center gap-1"
         onClick={() => open.value = true}
       >
         <p class="text-neutral-400 font-medium text-[12px]">

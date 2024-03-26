@@ -258,7 +258,7 @@ export default function DecoDay({
     <div class="flex flex-col bg-black lg:flex-row h-screen w-screen overflow-hidden">
       <div class="relative h-screen lg:h-screen w-screen overflow-clip">
         <div id="canvas" class="absolute z-[0]"></div>
-        <div class="absolute z-[0] flex flex-col gap-12 p-4 items-center bg-black  h-full w-screen box-border">
+        <div class="absolute z-[0] flex flex-col gap-12 p-4  bg-black  h-full w-screen box-border">
           {/* Gradiente */}
           <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center z-[-10]">
             <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
@@ -306,12 +306,12 @@ export default function DecoDay({
             <CallForSpeakers />
           </div>
 
-          <div class="p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 justify-start items-center gap-2 flex">
+          <div class="p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex">
             <img
               class="w-[91px] h-[91px] rounded-[100px]"
               src={imageAbout}
             />
-            <div class="flex-col justify-center items-start gap-2 flex">
+            <div class="flex-col items-start gap-2 flex">
               <div class="flex-col justify-center items-start flex">
                 <div class="text-emerald-500 text-sm font-medium leading-[21px]">
                   🌟 Keynote Speaker
