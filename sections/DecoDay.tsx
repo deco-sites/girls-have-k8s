@@ -267,7 +267,7 @@ export default function DecoDay({
             </div>
           </div>
 
-          <div class="px-4 justify-between items-center flex">
+          <div class="px-4 self-center">
             <Icon id="DecoLogo" class="w-[111px] h-[31px]" />
           </div>
 
@@ -302,8 +302,8 @@ export default function DecoDay({
             </div>
           </div>
           <div class="px-4 lg:px-0 z-10 flex flex-col items-center justify-center gap-6 w-full">
-            <SaveYourSpot />
             <CallForSpeakers />
+            <SaveYourSpot />
           </div>
 
           <div class="p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex">

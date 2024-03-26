@@ -20,7 +20,7 @@ function SaveYourSpot(
   return (
     <>
       <Button
-        class="px-6 pt-3 pb-4 bg-emerald-500 border-none rounded-[104.66px] flex justify-center items-center"
+        class="px-6 py-3 bg-emerald-500 border-none rounded-[104.66px] flex justify-center items-center"
         onClick={() => open.value = true}
       >
         <p class="text-neutral-900 font-medium text-[24px] text-center text-nowrap">
