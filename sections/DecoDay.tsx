@@ -342,60 +342,57 @@ export default function DecoDay({
             </div>
           </div>
           {/* Content */}
-          <div class="z-10 flex flex-col items-center justify-center pt-16">
-            <div class="flex gap-20">
-              <div class="items-center flex flex-col gap-[54px]">
-                <div class="flex flex-col">
-                  <Icon
-                    id="GirlsBanner"
-                    size={400}
-                    class="w-[450px] h-[250px]"
-                  />
-                  {
-                    /* <div class="w-full max-h-[212.08px]">
+          <div class="z-10 flex flex-row items-center justify-center gap-20 pt-16">
+            <div class="items-center flex flex-col gap-[54px]">
+              <div class="flex flex-col">
+                <Icon
+                  id="GirlsBanner"
+                  size={400}
+                  class="w-[450px] h-[250px]"
+                />
+                {
+                  /* <div class="w-full max-h-[212.08px]">
                   <img
                     class="w-full h-full object-scale-down"
                     src="../girls-banner.png"
                   />
                 </div> */
-                  }
+                }
 
-                  <div class="self-stretch text-center text-white text-lg font-normal">
-                    An event dedicated to the female{" "}
-                    <br />contributions in DevOps and SRE
-                  </div>
-                </div>
-                <div class="flex flex-col items-center justify-center gap-6 w-full">
-                  <CallForSpeakers />
-                  <SaveYourSpot />
+                <div class="self-stretch text-center text-white text-lg font-normal">
+                  An event dedicated to the female{" "}
+                  <br />contributions in DevOps and SRE
                 </div>
               </div>
-
-              <div class="flex flex-col gap-10">
-                <div class="w-[662.02px] h-[188px] p-8 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 inline-flex">
-                  <div class="self-stretch text-white text-2xl font-bold font-['Albert Sans'] leading-9">
-                    Join us for an exclusive virtual lunch session!
-                  </div>
-                  <div class="self-stretch text-zinc-400 text-base font-normal font-['Albert Sans'] leading-normal">
-                    Together we will explore the future of scalability,
-                    reliability, performance, and efficiency in technology. This
-                    event is a celebration of female voices in tech, but
-                    everyone is invited to attend and contribute.
-                  </div>
-                </div>
-                <LearnAbout image={imageAbout} />
+              <div class="flex flex-col items-center justify-center gap-6 w-full">
+                <CallForSpeakers />
+                <SaveYourSpot />
               </div>
             </div>
 
-            <div class="flex self-end pr-40">
-              <p class="text-white text-base font-bold uppercase">
-                PRESENT BY
-              </p>
-              <Icon
-                class="w-[89.57px] h-[19.97px]"
-                id="DecoGreenLogo"
-                size={24}
-              />
+            <div class="flex flex-col gap-10">
+              <div class="max-w-[662.02px] h-[188px] p-8 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 inline-flex">
+                <div class="self-stretch text-white text-2xl font-bold font-['Albert Sans'] leading-9">
+                  Join us for an exclusive virtual lunch session!
+                </div>
+                <div class="self-stretch text-zinc-400 text-base font-normal font-['Albert Sans'] leading-normal">
+                  Together we will explore the future of scalability,
+                  reliability, performance, and efficiency in technology. This
+                  event is a celebration of female voices in tech, but everyone
+                  is invited to attend and contribute.
+                </div>
+              </div>
+              <LearnAbout image={imageAbout} />
+              <div class="flex self-end">
+                <p class="text-white text-base font-bold uppercase">
+                  PRESENT BY
+                </p>
+                <Icon
+                  class="w-[94.57px] h-[24.97px]"
+                  id="DecoGreenLogo"
+                  size={24}
+                />
+              </div>
             </div>
           </div>
         </div>
