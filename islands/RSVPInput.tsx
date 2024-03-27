@@ -4,14 +4,15 @@ import { useCallback, useEffect } from "preact/hooks";
 import { invoke } from "deco-sites/girls-have-k8s/runtime.ts";
 
 interface Props {
+  type?: "speaker" | "attendee";
   placeholder?: string;
   subscribeMessage?: string;
   waitingMessage?: string;
   errorMessage?: string;
 }
 
-// Call For Speakers Input
-export default function SYSInput({
+export default function RSVPInput({
+  type = "speaker",
   placeholder = "Your email",
   subscribeMessage = "We've sent the confirmation to your email.",
   waitingMessage = "You've joined our waitlist.",
@@ -21,7 +22,7 @@ export default function SYSInput({
   const loading = useSignal(false);
   const feedbackMessage = useSignal({
     message: "",
-    buttonMessage: "Save your seat",
+    buttonMessage: type === "speaker" ? "I wanna Speak!" : "Save your spot",
   });
   const statusResponse = useSignal("");
 
@@ -31,6 +32,7 @@ export default function SYSInput({
       key: "deco-sites/girls-have-k8s/actions/submitRsvp.ts",
       props: {
         email: email.value,
+        isSpeaker: type === "speaker",
       },
     });
 
@@ -38,20 +40,22 @@ export default function SYSInput({
 
     statusResponse.value = invokeResponse.status ?? "";
     if (invokeResponse.ok) {
-      feedbackMessage.value = invokeResponse.status === "waiting-list"
-        ? {
-          message: waitingMessage,
-          buttonMessage: "Check your email",
-        }
-        : {
-          message: subscribeMessage,
-          buttonMessage: "You're in!",
-        };
-    } else {
       feedbackMessage.value = {
-        message: errorMessage,
-        buttonMessage: "Try again",
+        message: subscribeMessage,
+        buttonMessage: "You're in!",
       };
+    } else {
+      if (invokeResponse.status === "invalid-email") {
+        feedbackMessage.value = {
+          message: "Invalid email",
+          buttonMessage: "Try again",
+        };
+      } else {
+        feedbackMessage.value = {
+          message: errorMessage,
+          buttonMessage: "Try again",
+        };
+      }
     }
 
     loading.value = false;

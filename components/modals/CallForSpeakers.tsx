@@ -3,7 +3,7 @@ import Icon from "deco-sites/girls-have-k8s/components/ui/Icon.tsx";
 import Modal from "deco-sites/girls-have-k8s/components/ui/Modal.tsx";
 import { useId } from "deco-sites/girls-have-k8s/sdk/useId.ts";
 import { useSignal } from "@preact/signals";
-import CFSInput from "deco-sites/girls-have-k8s/islands/CFSInput.tsx";
+import RSVPInput from "deco-sites/girls-have-k8s/islands/RSVPInput.tsx";
 
 export interface Props {
   title?: string;
@@ -28,7 +28,7 @@ function CallForSpeakers(
       >
         <p class="text-white font-medium  text-[22px] text-center d">
           I wanna Speak!
-          <span class="font-normal">
+          <span class="font-normal italic">
             {" "} (girls only)
           </span>
         </p>
@@ -71,9 +71,7 @@ function CallForSpeakers(
             <p class="text-[#616B6B] text-[20px] leading-[150%] -tracking-[0.2px]">
               {description}
             </p>
-            <div class="px-4 lg:px-0 z-10 flex flex-col items-center justify-center gap-6 w-full">
-              <CFSInput />
-            </div>
+            <RSVPInput type="speaker" />
           </div>
         </div>
       </Modal>

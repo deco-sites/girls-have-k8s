@@ -5,7 +5,6 @@ import { useId } from "deco-sites/girls-have-k8s/sdk/useId.ts";
 import type { ImageObject } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import { useSignal } from "@preact/signals";
-import SYSInput from "deco-sites/girls-have-k8s/islands/SYSInput.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Props {
@@ -31,7 +30,7 @@ function LearnAbout(
   return (
     <>
       <div
-        class="w-full max-lg:max-w-[398px] z-10 p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
+        class="w-full max-lg:max-w-[398px] p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
         onClick={() => open.value = true}
       >
         <img
@@ -71,7 +70,7 @@ function LearnAbout(
           open.value = false;
         }}
       >
-        <div class="z-10 modal-box lg:max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
+        <div class="modal-box lg:max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
           <div class="flex justify-between items-center">
             <div class="flex">
               <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase">
@@ -92,7 +91,7 @@ function LearnAbout(
             </label>
           </div>
           <div class="flex flex-col lg:flex-row justify-center gap-6 ">
-            <div class="h-[286px] w-full lg:max-h-[376px]">
+            <div class="h-[286px] lg:min-w-[212px] w-full lg:max-h-[376px]">
               <Image
                 class="h-full w-full object-cover rounded-[20px] border border-emerald-500"
                 src={image || "/images/about.png"}

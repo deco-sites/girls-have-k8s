@@ -310,7 +310,7 @@ export default function DecoDay({
 
       {/* Desktop */}
       <div class="hidden lg:flex flex-col h-screen w-screen overflow-hidden">
-        <div id="canvas" class="absolute z-[0]"></div>
+        {/* <div id="canvas" class="absolute z-[0]"></div> */}
 
         <div class="flex flex-col gap-12 p-4  bg-black  h-screen w-screen box-border">
           {/* Gradiente */}

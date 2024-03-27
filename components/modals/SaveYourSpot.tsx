@@ -5,7 +5,7 @@ import { useId } from "deco-sites/girls-have-k8s/sdk/useId.ts";
 import { useSignal } from "@preact/signals";
 import type { ImageObject } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import SYSInput from "deco-sites/girls-have-k8s/islands/SYSInput.tsx";
+import RSVPInput from "deco-sites/girls-have-k8s/islands/RSVPInput.tsx";
 
 export interface Props {
   description?: string;
@@ -24,7 +24,7 @@ function SaveYourSpot(
         onClick={() => open.value = true}
       >
         <p class="text-neutral-900 font-medium text-[22px] text-center">
-          Save your spot <span class="font-normal">(everyone)</span>
+          Save your spot <span class="font-normal italic">(everyone)</span>
         </p>
       </Button>
 
@@ -59,9 +59,7 @@ function SaveYourSpot(
             <p class="text-neutral-900 text-2xl font-bold leading-9">
               {description}
             </p>
-            <div class="px-4 lg:px-0 z-10 flex flex-col items-center justify-center gap-6 w-full">
-              <SYSInput />
-            </div>
+            <RSVPInput type="attendee" />
           </div>
         </div>
       </Modal>

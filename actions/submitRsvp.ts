@@ -2,6 +2,7 @@ import { AppContext } from "../apps/site.ts";
 
 export type Props = {
   email: string;
+  isSpeaker: boolean;
 };
 
 const isEmailValid = (email: string): boolean => {
@@ -41,28 +42,34 @@ const fetchData = async (
 export default async (props: Props, _req: Request, ctx: AppContext) => {
   try {
     const email = props.email.toLowerCase().trim();
-    console.log("email", email);
+
     if (!isEmailValid(email)) {
       return {
         ok: false,
-        message: "Invalid input",
+        status: "invalid-email",
       };
     }
 
-    // Lista de convidados: viwhOXwNV31YMr6ss
-    // Confirmados: viwjTprU7jnuNvjNV
     // https://airtable.com/developers/web/api/list-records
-
     const guestsUrl =
       `https://api.airtable.com/v0/app7UiL1g325d5X3D/tbl9xeLDqtKlskQ8S`;
 
-    const getGuests = await fetchData(guestsUrl, "GET", ctx, undefined);
-
-    console.log("getGuests", getGuests);
+    await fetchData(guestsUrl, "POST", ctx, {
+      "records": [
+        {
+          "fields": {
+            "Attendee (email)": email,
+            "Save your spot / I wanna speak": props.isSpeaker
+              ? "True"
+              : "False",
+          },
+        },
+      ],
+    });
 
     return {
       ok: true,
-      status: "waiting-list",
+      status: "success",
     };
   } catch (error) {
     // TODO: How to log to Hyperdx?
