@@ -22,7 +22,7 @@ function SaveYourSpot(
   return (
     <>
       <Button
-        class="w-full max-w-[398px] px-6 py-3 bg-[#02F67C] border-none rounded-[104.66px] flex justify-center items-center"
+        class="w-full max-w-[398px] px-6 py-3 bg-[#02F67C] hover:bg-[#02F67C] hover:opacity-70 border-none rounded-[104.66px] flex justify-center items-center"
         onClick={handleModal}
       >
         <p class="text-neutral-900 font-medium text-[22px] text-center">

@@ -27,7 +27,7 @@ function CallForSpeakers(
   return (
     <>
       <Button
-        class="w-full max-w-[398px] px-2 py-3 bg-[#113032] rounded-[104.66px] border border-[#113032] flex justify-center items-center gap-2"
+        class="w-full max-w-[398px] px-2 py-3 bg-[#113032] rounded-[104.66px] border border-[#113032] flex justify-center items-center gap-2 hover:bg-[#113032] hover:opacity-70"
         onClick={handleModal}
       >
         <p class="text-white font-medium  text-[22px] text-center d">
