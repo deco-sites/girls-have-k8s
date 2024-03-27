@@ -16,11 +16,10 @@ const fetchData = async (
   _ctx: AppContext,
   body?: object,
 ) => {
-  // const airtableToken = Deno.env.get("AIRTABLE_KEY");
+  const airtableToken = Deno.env.get("AIRTABLE_TOKEN");
 
   const headers = {
-    Authorization:
-      `Bearer patpBp0crerHK2Dbg.c932367249c58f80670e93705c3d22c360be2ed17fff495d274cf9a04bf2896c`,
+    Authorization: `Bearer ${airtableToken}`,
     "Content-Type": "application/json",
   };
 
@@ -54,7 +53,7 @@ export default async (props: Props, _req: Request, ctx: AppContext) => {
     const guestsUrl =
       `https://api.airtable.com/v0/app7UiL1g325d5X3D/tbl9xeLDqtKlskQ8S`;
 
-    await fetchData(guestsUrl, "POST", ctx, {
+    const data = await fetchData(guestsUrl, "POST", ctx, {
       "records": [
         {
           "fields": {
@@ -66,6 +65,14 @@ export default async (props: Props, _req: Request, ctx: AppContext) => {
         },
       ],
     });
+
+    console.log("data", data);
+    if (data?.error) {
+      return {
+        ok: false,
+        status: data.error?.message,
+      };
+    }
 
     return {
       ok: true,

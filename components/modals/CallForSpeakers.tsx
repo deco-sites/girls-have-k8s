@@ -27,7 +27,7 @@ function CallForSpeakers(
         onClick={() => open.value = true}
       >
         <p class="text-white font-medium  text-[22px] text-center d">
-          I wanna Speak!
+          I wanna speak!
           <span class="font-normal italic">
             {" "} (girls only)
           </span>

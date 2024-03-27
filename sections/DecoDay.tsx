@@ -6,6 +6,7 @@ import SaveYourSpot from "../islands/modals/SaveYourSpot.tsx";
 import LearnAbout from "../islands/modals/LearnAbout.tsx";
 import CallForSpeakers from "../islands/modals/CallForSpeakers.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
 
 /**
  * @title ToggleDarkMode
@@ -220,31 +221,16 @@ const AnimatedElementMap: Record<
   toggle: Toggle,
 };
 
-export const loader = async (
-  props: Props,
-  req: Request,
-  ctx: AppContext,
-) => {
-  const device = await ctx.device;
-
-  return {
-    ...props,
-    isMobile: device,
-  };
-};
-
 export default function DecoDay({
   animationElements,
   animationElementsMobile,
-  isMobile,
   gravitySensation,
   title,
   imageAbout,
-}: Omit<Props, "isMobile"> & {
+}: Props & {
   animationElements: AnimationElement[];
   animationElementsMobile?: AnimationElement[];
   title: string;
-  isMobile: string;
 }) {
   return (
     <div class="flex flex-col bg-black h-full w-full">
@@ -271,20 +257,26 @@ export default function DecoDay({
           </div>
           <div class="h-[21px] self-stretch origin-top-left mx-2 border border-white">
           </div>
-          <div
-            class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal leading-[21px]`}
+          <a
+            class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal leading-[21px] hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer`}
+            href={"https://discord.gg/NEyNv2E7J7?event=1221650438978273301"}
+            target="_blank"
           >
             <Icon id="MapPin" size={20} class="w-[13px] lg:w-auto" />
             <span>deco.cx/discord</span>
-          </div>
+          </a>
         </div>
         <div class="z-10 w-full flex flex-col items-center">
           {/* <Icon id="GirlsBanner" size={400} class="w-full h-full" /> */}
           <div class="w-full h-[250px]">
-            <img
-              class="object-scale-down w-full h-full mb-6"
-              src="../girls-banner.png"
-            />
+            <Picture>
+              <img
+                class="object-scale-down w-full h-full mb-6"
+                src="../girls-banner.png"
+                decoding="async"
+                loading={"lazy"}
+              />
+            </Picture>
           </div>
 
           <div class="text-center text-white text-lg font-normal">
@@ -316,7 +308,7 @@ export default function DecoDay({
 
       {/* Desktop */}
       <div class="hidden lg:flex lg:flex-col lg:h-screen lg:w-screen lg:overflow-hidden">
-        {/* <div id="canvas" class="absolute z-[0]"></div> */}
+        <div id="canvas" class="absolute z-[0] opacity-0"></div>
 
         <div class="flex flex-col gap-12 p-4  bg-black  h-screen w-screen box-border">
           {/* Gradiente */}
@@ -340,12 +332,14 @@ export default function DecoDay({
             </div>
             <div class="h-[21px] self-stretch origin-top-left mx-8 border border-white">
             </div>
-            <div
-              class={`open-button w-auto flex justify-center gap-[3px] lg:gap-4 text-white text-xl font-normal leading-[21px]`}
+            <a
+              class={`open-button w-auto flex justify-center gap-[3px] lg:gap-4 text-white text-xl font-normal leading-[21px] hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer`}
+              href={"https://discord.gg/NEyNv2E7J7?event=1221650438978273301"}
+              target="_blank"
             >
               <Icon id="MapPin" size={20} class="w-[13px] lg:w-[17.90px]" />
               <span>deco.cx/discord</span>
-            </div>
+            </a>
           </div>
           {/* Content */}
           <div class="z-10 flex flex-row items-center justify-center gap-20 pt-16">
@@ -358,11 +352,15 @@ export default function DecoDay({
                   class="w-[450px] h-[250px]"
                 /> */
                 }
-                <div class="w-full h-[300px]">
-                  <img
-                    class="object-fill w-full h-full mb-6"
-                    src="../girls-banner.png"
-                  />
+                <div class="w-full h-[280px]">
+                  <Picture>
+                    <img
+                      class="object-fill w-full h-full mb-6"
+                      src="../girls-banner-desk.png"
+                      decoding="async"
+                      loading={"lazy"}
+                    />
+                  </Picture>
                 </div>
 
                 <div class="self-stretch text-center text-white text-lg font-normal">
@@ -389,20 +387,27 @@ export default function DecoDay({
                 </div>
               </div>
               <LearnAbout image={imageAbout} />
-              <div class="flex self-end">
+              <div class="flex items-center self-end">
                 <p class="text-white text-base font-bold uppercase">
                   PRESENT BY
                 </p>
                 <Icon
-                  class="w-[94.57px] h-[24.97px]"
+                  class="w-[94.57px] h-[24.97px] mb-[2px]"
                   id="DecoGreenLogo"
                   size={24}
                 />
               </div>
             </div>
           </div>
+          <div id="floatingElements" class="absolute z-0 invisible">
+            {animationElements.map((elem: AnimationElement) =>
+              AnimatedElementMap[elem.id](elem)
+            )}
+          </div>
         </div>
-        {/* <script type="module" src="/matter-script.js" /> */}
+
+        <script type="module" src="/matter-script.js" />
+
         {gravitySensation === 1 && (
           <div class="hidden" data-prop-editavel="0.1">
           </div>
