@@ -324,12 +324,11 @@ export default function DecoDay({
           </div>
         </div>
         <div class="z-10 flex flex-col items-center justify-center gap-6 w-full">
+          <div class="text-center text-white text-base font-medium">
+            Apply for a 5m lightning talk! {"<"}5 slots available{">"}
+          </div>
           <CallForSpeakers />
           <SaveYourSpot />
-        </div>
-
-        <div class="z-10 flex justify-center w-full">
-          <LearnAbout image={imageAbout} />
         </div>
 
         <div class="max-w-[398px] z-10 p-6 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 flex">
@@ -342,6 +341,21 @@ export default function DecoDay({
             celebration of female voices in tech, but everyone is invited to
             attend and contribute.
           </div>
+        </div>
+
+        <div class="z-10 flex justify-center w-full">
+          <LearnAbout image={imageAbout} />
+        </div>
+
+        <div class="flex items-center gap-[3px] pb-2">
+          <p class="text-white text-base font-bold uppercase">
+            PRESENT BY
+          </p>
+          <Icon
+            class="w-[98.57px] h-[28.97px] mb-[8px]"
+            id="DecoGreenLogo"
+            size={24}
+          />
         </div>
       </div>
 
@@ -406,6 +420,9 @@ export default function DecoDay({
                 </div>
               </div>
               <div class="flex flex-col items-center justify-center gap-6 w-full">
+                <div class="text-center text-white text-base font-medium font-['Albert Sans']">
+                  Apply for a 5m lightning talk! {"<"}5 slots available{">"}
+                </div>
                 <CallForSpeakers />
                 <SaveYourSpot />
               </div>
