@@ -32,28 +32,28 @@ function LearnAbout(
   return (
     <>
       <div
-        class="w-full max-lg:max-w-[398px] p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
+        class="w-full max-lg:max-w-[398px] p-6 lg:p-2 gap-[10px] lg:gap-2 bg-white bg-opacity-5 rounded-[20px] lg:rounded-[999px] border border-white border-opacity-20 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
         onClick={handleModal}
       >
         <img
-          class="w-[91px] h-[91px] lg:w-36 lg:h-36 rounded-[100px]"
+          class="w-[110px] h-[195px] object-cover lg:w-36 lg:h-36 rounded-[20px] lg:rounded-[100px]"
           src={image}
         />
         <div class="flex-col items-start gap-2 lg:gap-4 flex">
-          <p class="text-emerald-500 text-sm font-medium leading-[21px]">
-            🌟 Keynote Speaker{"  "}
-            <span class="text-white text-base font-bold leading-normal">
+          <div class="flex-col lg:flex-row lg:gap-2 justify-center items-start flex">
+            <div class="text-emerald-500 text-sm font-medium leading-[21px]">
+              🌟 Keynote Speaker
+            </div>
+            <div class="text-white text-base font-bold leading-normal">
               Fernanda Weiden
-            </span>
-          </p>
-
-          <div class="hidden lg:block">
-            <p class="max-w-[500.02px] text-zinc-400 text-base font-normal leading-normal text-wrap">
-              Tech leader, former CTO of VTEX, rich history at companies like
-              Meta and Google.
-            </p>
+            </div>
           </div>
-          <div class="px-2 py-[2px]  bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex items-center">
+
+          <p class="max-w-[500.02px] text-zinc-400 text-base font-normal leading-normal text-wrap">
+            Tech leader, former CTO of VTEX, rich history at companies like Meta
+            and Google.
+          </p>
+          <div class="px-2 py-[2px] max-lg:w-full  bg-white bg-opacity-5 rounded-[104.66px] border border-teal-950 flex justify-center items-center">
             <p class="text-neutral-400 font-medium text-[12px]">
               Learn about Fernanda
             </p>
