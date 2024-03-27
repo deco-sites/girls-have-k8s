@@ -73,12 +73,12 @@ function LearnAbout(
       >
         <div class="modal-box lg:max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
           <div class="flex justify-between items-center">
-            <div class="flex">
-              <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase">
+            <div class="flex items-center">
+              <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase lg:mr-[8px]">
                 PRESENT BY
               </p>
               <Icon
-                class="w-[112.77px] h-[26.88px] lg:w-[72.17px] lg:h-[17.2px]"
+                class="w-[112.77px] h-[26.88px] lg:w-[75.17px] lg:h-[20.2px] lg:mb-[5px]"
                 id="DecoGreenLogo"
                 size={24}
               />

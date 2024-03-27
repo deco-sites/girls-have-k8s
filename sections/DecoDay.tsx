@@ -424,12 +424,12 @@ export default function DecoDay({
                 </div>
               </div>
               <LearnAbout image={imageAbout} />
-              <div class="flex items-center self-end">
+              <div class="flex items-center self-end gap-[3px]">
                 <p class="text-white text-base font-bold uppercase">
                   PRESENT BY
                 </p>
                 <Icon
-                  class="w-[94.57px] h-[24.97px] mb-[2px]"
+                  class="w-[98.57px] h-[28.97px] mb-[8px]"
                   id="DecoGreenLogo"
                   size={24}
                 />
