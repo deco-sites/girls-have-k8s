@@ -1,11 +1,9 @@
-import Button from "deco-sites/girls-have-k8s/components/ui/Button.tsx";
 import Icon from "deco-sites/girls-have-k8s/components/ui/Icon.tsx";
 import Modal from "deco-sites/girls-have-k8s/components/ui/Modal.tsx";
 import { useId } from "deco-sites/girls-have-k8s/sdk/useId.ts";
-import type { ImageObject } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import { useSignal } from "@preact/signals";
 import { ImageWidget } from "apps/admin/widgets.ts";
+import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
 
 export interface Props {
   title?: string;
@@ -25,27 +23,29 @@ function LearnAbout(
   }: Props,
 ) {
   const id = useId();
-  const open = useSignal(false);
+  const { displayModalAbout } = useUI();
+
+  function handleModal() {
+    displayModalAbout.value = !displayModalAbout.value;
+  }
 
   return (
     <>
       <div
         class="w-full max-lg:max-w-[398px] p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
-        onClick={() => open.value = true}
+        onClick={handleModal}
       >
         <img
           class="w-[91px] h-[91px] lg:w-36 lg:h-36 rounded-[100px]"
           src={image}
         />
         <div class="flex-col items-start gap-2 lg:gap-4 flex">
-          <div class="flex-col lg:flex-row lg:gap-2 justify-center items-start flex">
-            <div class="text-emerald-500 text-sm font-medium leading-[21px]">
-              🌟 Keynote Speaker
-            </div>
-            <div class="text-white text-base font-bold leading-normal">
+          <p class="text-emerald-500 text-sm font-medium leading-[21px]">
+            🌟 Keynote Speaker{"  "}
+            <span class="text-white text-base font-bold leading-normal">
               Fernanda Weiden
-            </div>
-          </div>
+            </span>
+          </p>
 
           <div class="hidden lg:block">
             <p class="max-w-[500.02px] text-zinc-400 text-base font-normal leading-normal text-wrap">
@@ -65,19 +65,18 @@ function LearnAbout(
       </div>
       <Modal
         id={id}
-        open={open.value}
-        onClose={() => {
-          open.value = false;
-        }}
+        open={displayModalAbout.value}
+        loading="lazy"
+        onClose={handleModal}
       >
         <div class="modal-box lg:max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
           <div class="flex justify-between items-center">
-            <div class="flex">
-              <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase">
+            <div class="flex items-center">
+              <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase lg:mr-[8px]">
                 PRESENT BY
               </p>
               <Icon
-                class="w-[112.77px] h-[26.88px] lg:w-[72.17px] lg:h-[17.2px]"
+                class="w-[112.77px] h-[26.88px] lg:w-[75.17px] lg:h-[20.2px] lg:mb-[5px]"
                 id="DecoGreenLogo"
                 size={24}
               />

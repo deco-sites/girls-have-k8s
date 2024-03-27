@@ -6,8 +6,6 @@ if (window.innerWidth >= 1024) {
 
     document.body.style.overflow = 'hidden';
 
-    const toggles = document.querySelectorAll('[data-toggle-darkmode]');
-
     const propEditavel = document.querySelector('[data-prop-editavel]')?.dataset?.propEditavel || 1;
 
     const screenSize = window.innerWidth;
@@ -20,16 +18,6 @@ if (window.innerWidth >= 1024) {
         }, 250);
     });
 
-
-    Array.from(toggles).forEach(tgl => {
-        tgl.addEventListener('change', (e) => {   
-            if (e.target.checked) {
-                htmlElement.classList.add('dark');
-            } else {
-                htmlElement.classList.remove('dark');
-            }
-        });
-    })
 
     function sleep(ms = 0) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -86,6 +74,7 @@ if (window.innerWidth >= 1024) {
         for (let i = 0; i < daisyElems.length; i++) {
             const elem = daisyElems[i];
         
+            console.log(i, elem)
             elem.style.zIndex = 0;
         
             const isBall = elem.classList.contains('rounded-full');
@@ -254,7 +243,7 @@ if (window.innerWidth >= 1024) {
         // Add walls
         Composite.add(world, [
             // Base
-            Bodies.rectangle(VIEW.width / 2, VIEW.height, screenSize*2, 10, { isStatic: true, render: { visible: true, fillStyle: '#3498db', strokeStyle: '#2980b9', lineWidth: 2 } }),
+            Bodies.rectangle(VIEW.width / 2, VIEW.height - 20, screenSize*2, 10, { isStatic: true, render: { visible: true, fillStyle: '#3498db', strokeStyle: '#2980b9', lineWidth: 2 } }),
             // Left side
             Bodies.rectangle(0, VIEW.height / 2, 10, VIEW.height * 2, { isStatic: true, render: { visible: true,fillStyle: '#3498db', strokeStyle: '#2980b9', lineWidth: 2 } }),
             // Right side
