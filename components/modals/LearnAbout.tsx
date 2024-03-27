@@ -40,14 +40,12 @@ function LearnAbout(
           src={image}
         />
         <div class="flex-col items-start gap-2 lg:gap-4 flex">
-          <div class="flex-col lg:flex-row lg:gap-2 justify-center items-start flex">
-            <div class="text-emerald-500 text-sm font-medium leading-[21px]">
-              🌟 Keynote Speaker
-            </div>
-            <div class="text-white text-base font-bold leading-normal">
+          <p class="text-emerald-500 text-sm font-medium leading-[21px]">
+            🌟 Keynote Speaker{"  "}
+            <span class="text-white text-base font-bold leading-normal">
               Fernanda Weiden
-            </div>
-          </div>
+            </span>
+          </p>
 
           <div class="hidden lg:block">
             <p class="max-w-[500.02px] text-zinc-400 text-base font-normal leading-normal text-wrap">

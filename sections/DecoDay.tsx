@@ -332,11 +332,11 @@ export default function DecoDay({
           <LearnAbout image={imageAbout} />
         </div>
 
-        <div class="max-w-[398px] z-10 p-8 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 flex">
-          <div class="text-white text-xl font-bold leading-[30px]">
+        <div class="max-w-[398px] z-10 p-6 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 flex">
+          <div class="text-white text-lg font-bold leading-[30px]">
             Join us for an exclusive virtual lunch session!
           </div>
-          <div class="text-zinc-400 text-base font-normal leading-normal">
+          <div class="text-zinc-400 text-sm font-normal leading-normal">
             Together we will explore the future of scalability, reliability,
             performance, and efficiency in technology. This event is a
             celebration of female voices in tech, but everyone is invited to
