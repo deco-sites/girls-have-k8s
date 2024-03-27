@@ -17,11 +17,20 @@ function SaveYourSpot(
   const id = useId();
   const open = useSignal(false);
 
+  function handleOpen() {
+    console.log("open");
+    open.value = true;
+  }
+
+  function handleClose() {
+    open.value = false;
+  }
+
   return (
     <>
       <Button
         class="w-full max-w-[398px] px-6 py-3 bg-[#02F67C] border-none rounded-[104.66px] flex justify-center items-center"
-        onClick={() => open.value = true}
+        onClick={handleOpen}
       >
         <p class="text-neutral-900 font-medium text-[22px] text-center">
           Save your spot <span class="font-normal italic">(everyone)</span>
@@ -31,9 +40,7 @@ function SaveYourSpot(
       <Modal
         id={id}
         open={open.value}
-        onClose={() => {
-          open.value = false;
-        }}
+        onClose={handleClose}
       >
         <div class="modal-box bg-white space-y-6 p-8 lg:p-12">
           <div class="flex justify-between items-center">

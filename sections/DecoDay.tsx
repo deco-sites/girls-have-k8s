@@ -301,11 +301,11 @@ export default function DecoDay({
           <LearnAbout image={imageAbout} />
         </div>
 
-        <div class="max-w-[398px] z-10 p-8 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 inline-flex">
-          <div class="self-stretch text-white text-xl font-bold leading-[30px]">
+        <div class="max-w-[398px] z-10 p-8 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 flex">
+          <div class="text-white text-xl font-bold leading-[30px]">
             Join us for an exclusive virtual lunch session!
           </div>
-          <div class="self-stretch text-zinc-400 text-base font-normal leading-normal">
+          <div class="text-zinc-400 text-base font-normal leading-normal">
             Together we will explore the future of scalability, reliability,
             performance, and efficiency in technology. This event is a
             celebration of female voices in tech, but everyone is invited to
@@ -315,12 +315,12 @@ export default function DecoDay({
       </div>
 
       {/* Desktop */}
-      <div class="hidden lg:flex flex-col h-screen w-screen overflow-hidden">
+      <div class="hidden lg:flex lg:flex-col lg:h-screen lg:w-screen lg:overflow-hidden">
         {/* <div id="canvas" class="absolute z-[0]"></div> */}
 
         <div class="flex flex-col gap-12 p-4  bg-black  h-screen w-screen box-border">
           {/* Gradiente */}
-          <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[50px] absolute inset-0 flex justify-center items-center">
+          <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center items-center">
             <div class="lg:opacity-50 bg-[#02F67C] w-[16rem] h-[19rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
             </div>
             <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
@@ -402,7 +402,7 @@ export default function DecoDay({
             </div>
           </div>
         </div>
-        <script type="module" src="/matter-script.js" />
+        {/* <script type="module" src="/matter-script.js" /> */}
         {gravitySensation === 1 && (
           <div class="hidden" data-prop-editavel="0.1">
           </div>
