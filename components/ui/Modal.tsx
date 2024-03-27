@@ -1,9 +1,9 @@
-import { useId } from "../../sdk/useId.ts";
 import { useSignal } from "@preact/signals";
 import { ComponentChildren } from "preact";
 import { useEffect, useState } from "preact/hooks";
 
 interface Props {
+  id: string;
   onClose?: () => void;
   open?: boolean;
   class?: string;
@@ -14,13 +14,13 @@ interface Props {
 
 function Modal(props: Props) {
   const {
+    id,
     children,
     open,
     onClose,
     loading = "lazy",
   } = props;
   const lazy = useSignal(loading === "lazy" && !open);
-  const id = useId();
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) =>
@@ -46,7 +46,7 @@ function Modal(props: Props) {
         class="modal-toggle"
         onChange={(e) => e.currentTarget.checked === false && onClose?.()}
       />
-      <div class="modal">
+      <div class="z-10 modal backdrop-blur-sm">
         {!lazy.value && children}
         <label class="modal-backdrop" for={id}>Close</label>
       </div>
