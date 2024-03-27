@@ -1,11 +1,9 @@
-import Button from "deco-sites/girls-have-k8s/components/ui/Button.tsx";
 import Icon from "deco-sites/girls-have-k8s/components/ui/Icon.tsx";
 import Modal from "deco-sites/girls-have-k8s/components/ui/Modal.tsx";
 import { useId } from "deco-sites/girls-have-k8s/sdk/useId.ts";
-import type { ImageObject } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import { useSignal } from "@preact/signals";
 import { ImageWidget } from "apps/admin/widgets.ts";
+import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
 
 export interface Props {
   title?: string;
@@ -25,13 +23,17 @@ function LearnAbout(
   }: Props,
 ) {
   const id = useId();
-  const open = useSignal(false);
+  const { displayModalAbout } = useUI();
+
+  function handleModal() {
+    displayModalAbout.value = !displayModalAbout.value;
+  }
 
   return (
     <>
       <div
         class="w-full max-lg:max-w-[398px] p-2 bg-opacity-5 rounded-[999px] border border-white border-opacity-20 gap-2 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
-        onClick={() => open.value = true}
+        onClick={handleModal}
       >
         <img
           class="w-[91px] h-[91px] lg:w-36 lg:h-36 rounded-[100px]"
@@ -65,10 +67,9 @@ function LearnAbout(
       </div>
       <Modal
         id={id}
-        open={open.value}
-        onClose={() => {
-          open.value = false;
-        }}
+        open={displayModalAbout.value}
+        loading="lazy"
+        onClose={handleModal}
       >
         <div class="modal-box lg:max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
           <div class="flex justify-between items-center">

@@ -7,12 +7,18 @@ import { signal } from "@preact/signals";
 
 const displayCart = signal(false);
 const displayMenu = signal(false);
+const displayModalSpot = signal(false);
+const displayModalSpeaker = signal(false);
+const displayModalAbout = signal(false);
 const displaySearchPopup = signal(false);
 const displaySearchDrawer = signal(false);
 
 const state = {
   displayCart,
   displayMenu,
+  displayModalSpot,
+  displayModalSpeaker,
+  displayModalAbout,
   displaySearchPopup,
   displaySearchDrawer,
 };
