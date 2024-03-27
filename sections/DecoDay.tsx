@@ -192,18 +192,17 @@ interface TopButton {
 
 export interface Props {
   animationElements: AnimationElement[];
-  /**
-   * @description Mobile Elements
-   */
-  animationElementsMobile: AnimationElement[];
+  // /**
+  //  * @description Mobile Elements
+  //  */
+  // animationElementsMobile: AnimationElement[];
   /**
    * @description Select Gravity Level - 1(super slow) to 7(super fast) | Default is 4(Earths Gravity)
    */
   /** @default 4 */
   gravitySensation?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
-  /** @format html */
-  title?: string;
 
+  imageTitle?: ImageWidget;
   imageAbout?: ImageWidget;
 }
 
@@ -223,14 +222,13 @@ const AnimatedElementMap: Record<
 
 export default function DecoDay({
   animationElements,
-  animationElementsMobile,
+  // animationElementsMobile,
   gravitySensation,
-  title,
   imageAbout,
+  imageTitle,
 }: Props & {
   animationElements: AnimationElement[];
-  animationElementsMobile?: AnimationElement[];
-  title: string;
+  // animationElementsMobile?: AnimationElement[];
 }) {
   return (
     <div class="flex flex-col bg-black h-full w-full">
@@ -268,11 +266,16 @@ export default function DecoDay({
         </div>
         <div class="z-10 w-full flex flex-col items-center">
           {/* <Icon id="GirlsBanner" size={400} class="w-full h-full" /> */}
-          <div class="w-full h-[250px]">
+          <div class="w-full h-[200px]">
             <Picture>
+              <Source
+                src={imageTitle || ""}
+                width={200}
+                height={200}
+              />
               <img
-                class="object-scale-down w-full h-full mb-6"
-                src="../girls-banner.png"
+                class="w-full h-full mb-6 object-contain"
+                src={imageTitle || ""}
                 decoding="async"
                 loading={"lazy"}
               />
@@ -342,21 +345,19 @@ export default function DecoDay({
             </a>
           </div>
           {/* Content */}
-          <div class="z-10 flex flex-row items-center justify-center gap-20 pt-16">
+          <div class="z-10 flex flex-row items-center justify-center gap-20">
             <div class="items-center flex flex-col gap-[54px]">
               <div class="flex flex-col">
-                {
-                  /* <Icon
-                  id="GirlsBanner"
-                  size={400}
-                  class="w-[450px] h-[250px]"
-                /> */
-                }
                 <div class="w-full h-[280px]">
                   <Picture>
+                    <Source
+                      src={imageTitle || ""}
+                      width={250}
+                      height={250}
+                    />
                     <img
-                      class="object-fill w-full h-full mb-6"
-                      src="../girls-banner-desk.png"
+                      class="w-full h-full mb-6 object-scale-down"
+                      src={imageTitle || ""}
                       decoding="async"
                       loading={"lazy"}
                     />
