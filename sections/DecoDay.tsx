@@ -269,7 +269,7 @@ export default function DecoDay({
   return (
     <div class="flex flex-col bg-black h-full w-full">
       {/* Mobile */}
-      <div class="lg:hidden flex flex-col gap-12 p-4 items-center  bg-black  h-full w-screen box-border">
+      <div class="lg:hidden flex flex-col gap-12 p-4 pt-[22px] lg:p-4 items-center  bg-black  h-full w-screen box-border">
         {/* Gradiente */}
         <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center">
           <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
@@ -278,7 +278,7 @@ export default function DecoDay({
           </div>
         </div>
 
-        <div class="z-10 px-4 self-center">
+        <div class="hidden lg:block z-10 px-4 self-center">
           <Icon id="DecoLogo" class="w-[111px] h-[31px]" />
         </div>
 
@@ -324,7 +324,7 @@ export default function DecoDay({
           </div>
         </div>
         <div class="z-10 flex flex-col items-center justify-center gap-6 w-full">
-          <div class="text-center text-white text-base font-medium">
+          <div class="text-center text-white text-base font-medium italic">
             Apply for a 5m lightning talk! {"<"}5 slots available{">"}
           </div>
           <CallForSpeakers />
@@ -420,7 +420,7 @@ export default function DecoDay({
                 </div>
               </div>
               <div class="flex flex-col items-center justify-center gap-6 w-full">
-                <div class="text-center text-white text-base font-medium font-['Albert Sans']">
+                <div class="text-center text-white text-base font-medium font-['Albert Sans'] italic ">
                   Apply for a 5m lightning talk! {"<"}5 slots available{">"}
                 </div>
                 <CallForSpeakers />
