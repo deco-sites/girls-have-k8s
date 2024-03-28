@@ -125,13 +125,17 @@ function LearnAbout(
                   <h3 class="text-green-500 text-2xl font-semibold leading-[28.80px]">
                     {popupKeyNoteSpeaker.title}
                   </h3>
-                  <div class="flex justify-center items-center w-10 h-10 p-2 bg-emerald-500 rounded-[71.76px]">
+                  <a
+                    class="flex justify-center items-center w-10 h-10 p-2 bg-emerald-500 rounded-[71.76px] hover:opacity-70 transition-opacity duration-300"
+                    href={popupKeyNoteSpeaker.linkedinUrl}
+                    target="_blank"
+                  >
                     <Icon
                       id="LinkedinIcon"
                       class="w-6 h-6 fill-black"
                       size={24}
                     />
-                  </div>
+                  </a>
                 </div>
                 <h4 class="text-neutral-900 text-xl font-normal leading-[30px]">
                   {popupKeyNoteSpeaker.subtitle}
