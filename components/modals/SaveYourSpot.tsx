@@ -26,7 +26,7 @@ function SaveYourSpot(
         onClick={handleModal}
       >
         <p class="text-neutral-900 font-medium text-[22px] text-center">
-          Save your spot <span class="font-normal italic">(everyone)</span>
+          Save your spot <span class="font-normal italic text-[1.125rem]">(everyone)</span>
         </p>
       </Button>
 

@@ -32,7 +32,7 @@ function CallForSpeakers(
       >
         <p class="text-white font-medium  text-[22px] text-center d">
           I wanna speak!
-          <span class="font-normal italic">
+          <span class="font-normal italic text-[1.125rem]">
             {" "} (girls only)
           </span>
         </p>
