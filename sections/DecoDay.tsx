@@ -237,7 +237,8 @@ export interface Props {
   /** @default 4 */
   gravitySensation?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
-  imageTitle?: ImageWidget;
+  imageDesk?: ImageWidget;
+  imageMobile?: ImageWidget;
   imageAbout?: ImageWidget;
 }
 
@@ -256,241 +257,270 @@ const AnimatedElementMap: Record<
   toggle: Toggle,
 };
 
+export const loader = async (
+  props: Props,
+  req: Request,
+  ctx: AppContext,
+) => {
+  const device = ctx.device;
+
+  if (device === "desktop") {
+    return {
+      ...props,
+      isDesktop: true,
+    };
+  } else {
+    return {
+      ...props,
+      isDesktop: false,
+    };
+  }
+};
+
 export default function DecoDay({
   animationElements,
   // animationElementsMobile,
   gravitySensation,
   imageAbout,
-  imageTitle,
+  imageDesk,
+  imageMobile,
+  isDesktop,
 }: Props & {
   animationElements: AnimationElement[];
+  isDesktop: boolean;
   // animationElementsMobile?: AnimationElement[];
 }) {
   return (
     <div class="flex flex-col bg-black h-full w-full">
       {/* Mobile */}
-      <div class="lg:hidden flex flex-col gap-12 p-4 pt-[22px] lg:p-4 items-center  bg-black  h-full w-screen box-border">
-        {/* Gradiente */}
-        <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center">
-          <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
-          </div>
-          <div class="lg:opacity-50 bg-[#02F67C] w-[16rem] h-[19rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
-          </div>
-        </div>
+      {!isDesktop &&
+        (
+          <div class="lg:hidden flex flex-col gap-12 p-4 pt-[22px] lg:p-4 items-center  bg-black  h-full w-screen box-border">
+            {/* Gradiente */}
+            <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center">
+              <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
+              </div>
+              <div class="lg:opacity-50 bg-[#02F67C] w-[16rem] h-[19rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
+              </div>
+            </div>
 
-        <div class="hidden lg:block z-10 px-4 self-center">
-          <Icon id="DecoLogo" class="w-[111px] h-[31px]" />
-        </div>
+            <div class="hidden lg:block z-10 px-4 self-center">
+              <Icon id="DecoLogo" class="w-[111px] h-[31px]" />
+            </div>
 
-        <div class="z-10 flex flex-row justify-center leading-[150%]">
-          <div
-            class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal leading-[21px]`}
-          >
-            <Icon id="CalendarEvent" size={20} class="w-[13px] lg:w-auto" />
-            <span>Thursday April 4th, 12pm - 2pm BRT</span>
-          </div>
-          <div class="h-[21px] self-stretch origin-top-left mx-2 border border-white">
-          </div>
-          <a
-            class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal leading-[21px] hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer`}
-            href={"https://discord.gg/NEyNv2E7J7?event=1221650438978273301"}
-            target="_blank"
-          >
-            <Icon id="MapPin" size={20} class="w-[13px] lg:w-auto" />
-            <span>deco.cx/discord</span>
-          </a>
-        </div>
-        <div class="z-10 w-full flex flex-col items-center">
-          {/* <Icon id="GirlsBanner" size={400} class="w-full h-full" /> */}
-          <div class="w-full h-[200px]">
-            <Picture>
-              <Source
-                src={imageTitle || ""}
-                width={200}
-                height={200}
+            <div class="z-10 flex flex-row justify-center leading-[150%]">
+              <div
+                class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal leading-[21px]`}
+              >
+                <Icon id="CalendarEvent" size={20} class="w-[13px] lg:w-auto" />
+                <span>Thursday April 4th, 12pm - 2pm BRT</span>
+              </div>
+              <div class="h-[21px] self-stretch origin-top-left mx-2 border border-white">
+              </div>
+              <a
+                class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal leading-[21px] hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer`}
+                href={"https://discord.gg/NEyNv2E7J7?event=1221650438978273301"}
+                target="_blank"
+              >
+                <Icon id="MapPin" size={20} class="w-[13px] lg:w-auto" />
+                <span>deco.cx/discord</span>
+              </a>
+            </div>
+            <div class="z-10 w-full flex flex-col items-center">
+              {/* <Icon id="GirlsBanner" size={400} class="w-full h-full" /> */}
+              <div class="w-full h-[200px]">
+                <Picture preload={true}>
+                  <Source
+                    src={imageMobile || ""}
+                    width={200}
+                    height={200}
+                  />
+                  <img
+                    class="w-full h-full mb-6 object-contain"
+                    src={imageMobile || ""}
+                    decoding="async"
+                    loading={"lazy"}
+                  />
+                </Picture>
+              </div>
+
+              <div class="text-center text-white text-lg font-normal">
+                An event dedicated to the female{" "}
+                <br />contributions in DevOps and SRE
+              </div>
+            </div>
+            <div class="z-10 flex flex-col items-center justify-center gap-6 w-full">
+              <div class="text-center text-white text-base font-medium italic">
+                Apply for a 5m lightning talk! {"<"}5 slots available{">"}
+              </div>
+              <CallForSpeakers />
+              <SaveYourSpot />
+            </div>
+
+            <div class="max-w-[398px] z-10 p-6 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 flex">
+              <div class="text-white text-lg font-bold leading-[30px]">
+                Join us for an exclusive virtual lunch session!
+              </div>
+              <div class="text-zinc-400 text-sm font-normal leading-normal">
+                Together we will explore the future of scalability, reliability,
+                performance, and efficiency in technology. This event is a
+                celebration of female voices in tech, but everyone is invited to
+                attend and contribute.
+              </div>
+            </div>
+
+            <div class="z-10 flex justify-center w-full">
+              <LearnAbout image={imageAbout} />
+            </div>
+
+            <div class="flex items-center gap-[3px] pb-2">
+              <p class="text-white text-base font-bold uppercase">
+                PRESENTED BY
+              </p>
+              <Icon
+                class="w-[98.57px] h-[28.97px] mb-[8px]"
+                id="DecoGreenLogo"
+                size={24}
               />
-              <img
-                class="w-full h-full mb-6 object-contain"
-                src={imageTitle || ""}
-                decoding="async"
-                loading={"lazy"}
-              />
-            </Picture>
+            </div>
           </div>
-
-          <div class="text-center text-white text-lg font-normal">
-            An event dedicated to the female{" "}
-            <br />contributions in DevOps and SRE
-          </div>
-        </div>
-        <div class="z-10 flex flex-col items-center justify-center gap-6 w-full">
-          <div class="text-center text-white text-base font-medium italic">
-            Apply for a 5m lightning talk! {"<"}5 slots available{">"}
-          </div>
-          <CallForSpeakers />
-          <SaveYourSpot />
-        </div>
-
-        <div class="max-w-[398px] z-10 p-6 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 flex">
-          <div class="text-white text-lg font-bold leading-[30px]">
-            Join us for an exclusive virtual lunch session!
-          </div>
-          <div class="text-zinc-400 text-sm font-normal leading-normal">
-            Together we will explore the future of scalability, reliability,
-            performance, and efficiency in technology. This event is a
-            celebration of female voices in tech, but everyone is invited to
-            attend and contribute.
-          </div>
-        </div>
-
-        <div class="z-10 flex justify-center w-full">
-          <LearnAbout image={imageAbout} />
-        </div>
-
-        <div class="flex items-center gap-[3px] pb-2">
-          <p class="text-white text-base font-bold uppercase">
-            PRESENTED BY
-          </p>
-          <Icon
-            class="w-[98.57px] h-[28.97px] mb-[8px]"
-            id="DecoGreenLogo"
-            size={24}
-          />
-        </div>
-      </div>
+        )}
 
       {/* Desktop */}
-      <div class="hidden lg:flex lg:flex-col lg:h-screen lg:w-screen lg:overflow-hidden">
-        <div id="canvas" class="absolute z-[0] opacity-0"></div>
+      {isDesktop &&
+        (
+          <div class="hidden lg:flex lg:flex-col lg:h-screen lg:w-screen lg:overflow-hidden">
+            <div id="canvas" class="absolute z-[0] opacity-0"></div>
 
-        <div class="flex flex-col gap-4 p-4  bg-black  h-screen w-screen box-border">
-          {/* Gradiente */}
-          <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center items-center">
-            <div class="lg:opacity-50 bg-[#02F67C] w-[16rem] h-[19rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
-            </div>
-            <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
-            </div>
-          </div>
+            <div class="flex flex-col gap-4 p-4  bg-black  h-screen w-screen box-border">
+              {/* Gradiente */}
+              <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center items-center">
+                <div class="lg:opacity-50 bg-[#02F67C] w-[16rem] h-[19rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
+                </div>
+                <div class="lg:opacity-50 bg-[#9900E5] w-[21rem] h-[17rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
+                </div>
+              </div>
 
-          <div class="z-10 flex flex-row justify-center leading-[150%] self-end px-6 py-[30px]">
-            <div
-              class={`open-button w-auto flex justify-center gap-[3px] lg:gap-4 text-white text-xl font-normal leading-[21px]`}
-            >
-              <Icon
-                id="CalendarEvent"
-                size={20}
-                class="w-[13px] lg:w-[17.90px]"
-              />
-              <span>Thursday April 4th, 12pm - 2pm BRT</span>
-            </div>
-            <div class="h-[21px] self-stretch origin-top-left mx-8 border border-white">
-            </div>
-            <a
-              class={`open-button w-auto flex justify-center gap-[3px] lg:gap-4 text-white text-xl font-normal leading-[21px] hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer`}
-              href={"https://discord.gg/NEyNv2E7J7?event=1221650438978273301"}
-              target="_blank"
-            >
-              <Icon id="MapPin" size={20} class="w-[13px] lg:w-[17.90px]" />
-              <span>deco.cx/discord</span>
-            </a>
-          </div>
-          {/* Content */}
-          <div class="z-10 flex flex-row items-center justify-center gap-20">
-            <div class="items-center flex flex-col gap-[54px]">
-              <div class="flex flex-col">
-                <div class="w-full h-[280px]">
-                  <Picture>
-                    <Source
-                      src={imageTitle || ""}
-                      width={250}
-                      height={250}
+              <div class="z-10 flex flex-row justify-center leading-[150%] self-end px-6 py-[30px]">
+                <div
+                  class={`open-button w-auto flex justify-center gap-[3px] lg:gap-4 text-white text-xl font-normal leading-[21px]`}
+                >
+                  <Icon
+                    id="CalendarEvent"
+                    size={20}
+                    class="w-[13px] lg:w-[17.90px]"
+                  />
+                  <span>Thursday April 4th, 12pm - 2pm BRT</span>
+                </div>
+                <div class="h-[21px] self-stretch origin-top-left mx-8 border border-white">
+                </div>
+                <a
+                  class={`open-button w-auto flex justify-center gap-[3px] lg:gap-4 text-white text-xl font-normal leading-[21px] hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer`}
+                  href={"https://discord.gg/NEyNv2E7J7?event=1221650438978273301"}
+                  target="_blank"
+                >
+                  <Icon id="MapPin" size={20} class="w-[13px] lg:w-[17.90px]" />
+                  <span>deco.cx/discord</span>
+                </a>
+              </div>
+              {/* Content */}
+              <div class="z-10 flex flex-row items-center justify-center gap-20">
+                <div class="items-center flex flex-col gap-[54px]">
+                  <div class="flex flex-col">
+                    <div class="w-full h-[280px]">
+                      <Picture preload={true}>
+                        <Source
+                          src={imageDesk || ""}
+                          width={250}
+                          height={250}
+                        />
+                        <img
+                          class="w-full h-full mb-6 object-scale-down"
+                          src={imageDesk || ""}
+                          decoding="async"
+                          loading={"eager"}
+                        />
+                      </Picture>
+                    </div>
+
+                    <div class="self-stretch text-center text-white text-lg font-normal">
+                      An event dedicated to the female{" "}
+                      <br />contributions in DevOps and SRE
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-center justify-center gap-6 w-full">
+                    <div class="text-center text-white text-base font-medium font-['Albert Sans'] italic ">
+                      Apply for a 5m lightning talk! {"<"}5 slots available{">"}
+                    </div>
+                    <CallForSpeakers />
+                    <SaveYourSpot />
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-10">
+                  <div class="max-w-[662.02px] h-[188px] p-8 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 inline-flex">
+                    <div class="self-stretch text-white text-2xl font-bold leading-9">
+                      Join us for an exclusive virtual lunch session!
+                    </div>
+                    <div class="self-stretch text-zinc-400 text-base font-normal leading-normal">
+                      Together we will explore the future of scalability,
+                      reliability, performance, and efficiency in technology.
+                      This event is a celebration of female voices in tech, but
+                      everyone is invited to attend and contribute.
+                    </div>
+                  </div>
+                  <LearnAbout image={imageAbout} />
+                  <div class="flex items-center self-end gap-[3px]">
+                    <p class="text-white text-base font-bold uppercase">
+                      PRESENTED BY
+                    </p>
+                    <Icon
+                      class="w-[98.57px] h-[28.97px] mb-[8px]"
+                      id="DecoGreenLogo"
+                      size={24}
                     />
-                    <img
-                      class="w-full h-full mb-6 object-scale-down"
-                      src={imageTitle || ""}
-                      decoding="async"
-                      loading={"lazy"}
-                    />
-                  </Picture>
-                </div>
-
-                <div class="self-stretch text-center text-white text-lg font-normal">
-                  An event dedicated to the female{" "}
-                  <br />contributions in DevOps and SRE
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col items-center justify-center gap-6 w-full">
-                <div class="text-center text-white text-base font-medium font-['Albert Sans'] italic ">
-                  Apply for a 5m lightning talk! {"<"}5 slots available{">"}
-                </div>
-                <CallForSpeakers />
-                <SaveYourSpot />
+              <div id="floatingElements" class="absolute z-0 invisible">
+                {animationElements.map((elem: AnimationElement) =>
+                  AnimatedElementMap[elem.id](elem)
+                )}
               </div>
             </div>
 
-            <div class="flex flex-col gap-10">
-              <div class="max-w-[662.02px] h-[188px] p-8 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 inline-flex">
-                <div class="self-stretch text-white text-2xl font-bold leading-9">
-                  Join us for an exclusive virtual lunch session!
-                </div>
-                <div class="self-stretch text-zinc-400 text-base font-normal leading-normal">
-                  Together we will explore the future of scalability,
-                  reliability, performance, and efficiency in technology. This
-                  event is a celebration of female voices in tech, but everyone
-                  is invited to attend and contribute.
-                </div>
+            <script type="module" src="/matter-script.js" />
+
+            {gravitySensation === 1 && (
+              <div class="hidden" data-prop-editavel="0.1">
               </div>
-              <LearnAbout image={imageAbout} />
-              <div class="flex items-center self-end gap-[3px]">
-                <p class="text-white text-base font-bold uppercase">
-                  PRESENTED BY
-                </p>
-                <Icon
-                  class="w-[98.57px] h-[28.97px] mb-[8px]"
-                  id="DecoGreenLogo"
-                  size={24}
-                />
+            )}
+            {gravitySensation === 2 && (
+              <div class="hidden" data-prop-editavel="0.3">
               </div>
-            </div>
-          </div>
-          <div id="floatingElements" class="absolute z-0 invisible">
-            {animationElements.map((elem: AnimationElement) =>
-              AnimatedElementMap[elem.id](elem)
+            )}
+            {gravitySensation === 3 && (
+              <div class="hidden" data-prop-editavel="0.6">
+              </div>
+            )}
+            {gravitySensation === 4 && (
+              <div class="hidden" data-prop-editavel="1">
+              </div>
+            )}
+            {gravitySensation === 5 && (
+              <div class="hidden" data-prop-editavel="1.5">
+              </div>
+            )}
+            {gravitySensation === 6 && (
+              <div class="hidden" data-prop-editavel="2">
+              </div>
+            )}
+            {gravitySensation === 7 && (
+              <div class="hidden" data-prop-editavel="3">
+              </div>
             )}
           </div>
-        </div>
-
-        <script type="module" src="/matter-script.js" />
-
-        {gravitySensation === 1 && (
-          <div class="hidden" data-prop-editavel="0.1">
-          </div>
         )}
-        {gravitySensation === 2 && (
-          <div class="hidden" data-prop-editavel="0.3">
-          </div>
-        )}
-        {gravitySensation === 3 && (
-          <div class="hidden" data-prop-editavel="0.6">
-          </div>
-        )}
-        {gravitySensation === 4 && (
-          <div class="hidden" data-prop-editavel="1">
-          </div>
-        )}
-        {gravitySensation === 5 && (
-          <div class="hidden" data-prop-editavel="1.5">
-          </div>
-        )}
-        {gravitySensation === 6 && (
-          <div class="hidden" data-prop-editavel="2">
-          </div>
-        )}
-        {gravitySensation === 7 && (
-          <div class="hidden" data-prop-editavel="3">
-          </div>
-        )}
-      </div>
     </div>
   );
 }
