@@ -243,7 +243,7 @@ if (window.innerWidth >= 1024) {
         // Add walls
         Composite.add(world, [
             // Base
-            Bodies.rectangle(VIEW.width / 2, VIEW.height - 20, screenSize*2, 10, { isStatic: true, render: { visible: true, fillStyle: '#3498db', strokeStyle: '#2980b9', lineWidth: 2 } }),
+            Bodies.rectangle(VIEW.width / 2, VIEW.height -5, screenSize*2, 10, { isStatic: true, render: { visible: true, fillStyle: '#3498db', strokeStyle: '#2980b9', lineWidth: 2 } }),
             // Left side
             Bodies.rectangle(0, VIEW.height / 2, 10, VIEW.height * 2, { isStatic: true, render: { visible: true,fillStyle: '#3498db', strokeStyle: '#2980b9', lineWidth: 2 } }),
             // Right side
