@@ -34,6 +34,7 @@ export type AvailableIcons =
   | "Mastercard"
   | "Message"
   | "Microphone"
+  | "MicButton"
   | "Phone"
   | "Pix"
   | "Plus"
