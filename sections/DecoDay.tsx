@@ -5,7 +5,7 @@ import Image from "apps/website/components/Image.tsx";
 import SaveYourSpot from "../islands/modals/SaveYourSpot.tsx";
 import LearnAbout from "../islands/modals/LearnAbout.tsx";
 import CallForSpeakers from "../islands/modals/CallForSpeakers.tsx";
-import { ImageWidget } from "apps/admin/widgets.ts";
+import { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import { Props as LearnAboutProps } from "../components/modals/LearnAbout.tsx";
 import { Props as CallForSpeakersProps } from "../components/modals/CallForSpeakers.tsx";
@@ -249,7 +249,7 @@ export interface Props {
   imageDesk?: ImageWidget;
   imageMobile?: ImageWidget;
 
-  subtitle?: string;
+  subtitle?: HTMLWidget;
   messageSpeaker?: string;
 
   eventText?: {
@@ -257,12 +257,10 @@ export interface Props {
     description?: string;
   };
 
-  keynoteSpeaker?: LearnAboutProps["keynoteSpeaker"];
+  keynoteSpeaker?: LearnAboutProps;
 
-  popupKeyNoteSpeaker?: LearnAboutProps["popupKeyNoteSpeaker"];
-
-  popupSpeaker?: CallForSpeakersProps["popupSpeaker"];
-  popupAttendee?: SaveYourSpotProps["popupAttendee"];
+  popupSpeaker?: CallForSpeakersProps;
+  popupAttendee?: SaveYourSpotProps;
 }
 
 const AnimatedElementMap: Record<
@@ -313,7 +311,8 @@ export default function DecoDay({
   imageDesk,
   imageMobile,
   isDesktop,
-  subtitle = "An event dedicated to the female contributions in DevOps and SRE",
+  subtitle =
+    "<p>An event dedicated to the female <br />contributions in DevOps and SRE<p/>",
   messageSpeaker = "Apply for a 5m lightning talk! < 5 slots available >",
 
   eventText = {
@@ -323,8 +322,6 @@ export default function DecoDay({
   },
 
   keynoteSpeaker,
-
-  popupKeyNoteSpeaker,
   popupSpeaker,
   popupAttendee,
 }: Props & {
@@ -386,16 +383,17 @@ export default function DecoDay({
                 </Picture>
               </div>
 
-              <div class="text-center text-white text-lg font-normal">
-                {subtitle}
-              </div>
+              <div
+                class="text-center text-white text-lg font-normal"
+                dangerouslySetInnerHTML={{ __html: subtitle }}
+              />
             </div>
             <div class="z-10 flex flex-col items-center justify-center gap-6 w-full">
               <div class="text-center text-white text-base font-medium italic">
                 {messageSpeaker}
               </div>
-              <CallForSpeakers popupSpeaker={popupSpeaker} />
-              <SaveYourSpot />
+              <CallForSpeakers {...popupSpeaker} />
+              <SaveYourSpot {...popupAttendee} />
             </div>
 
             <div class="max-w-[398px] z-10 p-6 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 flex">
@@ -409,8 +407,7 @@ export default function DecoDay({
 
             <div class="z-10 flex justify-center w-full">
               <LearnAbout
-                keynoteSpeaker={keynoteSpeaker}
-                popupKeyNoteSpeaker={popupKeyNoteSpeaker}
+                {...keynoteSpeaker}
               />
             </div>
 
@@ -484,17 +481,17 @@ export default function DecoDay({
                       </Picture>
                     </div>
 
-                    <div class="self-stretch text-center text-white text-lg font-normal">
-                      An event dedicated to the female{" "}
-                      <br />contributions in DevOps and SRE
-                    </div>
+                    <div
+                      class="text-center text-white text-lg font-normal"
+                      dangerouslySetInnerHTML={{ __html: subtitle }}
+                    />
                   </div>
                   <div class="flex flex-col items-center justify-center gap-6 w-full">
-                    <div class="text-center text-white text-base font-medium font-['Albert Sans'] italic ">
+                    <div class="text-center text-white text-base font-medium italic ">
                       {messageSpeaker}
                     </div>
-                    <CallForSpeakers popupSpeaker={popupSpeaker} />
-                    <SaveYourSpot />
+                    <CallForSpeakers {...popupSpeaker} />
+                    <SaveYourSpot {...popupAttendee} />
                   </div>
                 </div>
 
@@ -508,8 +505,7 @@ export default function DecoDay({
                     </div>
                   </div>
                   <LearnAbout
-                    keynoteSpeaker={keynoteSpeaker}
-                    popupKeyNoteSpeaker={popupKeyNoteSpeaker}
+                    {...keynoteSpeaker}
                   />
                   <div class="flex items-center self-end gap-[3px]">
                     <p class="text-white text-base font-bold uppercase">

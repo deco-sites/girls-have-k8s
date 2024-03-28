@@ -6,23 +6,19 @@ import RSVPInput from "deco-sites/girls-have-k8s/islands/RSVPInput.tsx";
 import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
 
 export interface Props {
-  popupSpeaker?: {
-    buttonText?: string;
-    buttonTextScope?: string;
-    title?: string;
-    description?: string;
-  };
+  buttonText?: string;
+  buttonTextScope?: string;
+  title?: string;
+  description?: string;
 }
 
 function CallForSpeakers(
   {
-    popupSpeaker = {
-      buttonText: "I wanna speak!",
-      buttonTextScope: "(girls only)",
-      title: "Call for Speakers",
-      description:
-        "Have insights on SRE or a related topic you're eager to share? Interested in taking the virtual stage after Fernanda's keynote?",
-    },
+    buttonText = "I wanna speak!",
+    buttonTextScope = "(girls only)",
+    title = "Call for Speakers",
+    description =
+      "Have insights on SRE or a related topic you're eager to share? Interested in taking the virtual stage after Fernanda's keynote?",
   }: Props,
 ) {
   const id = useId();
@@ -39,9 +35,9 @@ function CallForSpeakers(
         onClick={handleModal}
       >
         <p class="text-white font-medium  text-[22px] text-center d">
-          {popupSpeaker.buttonText}
+          {buttonText}
           <span class="font-normal italic text-[1.125rem]">
-            {" "} {popupSpeaker.buttonTextScope}
+            {" "} {buttonTextScope}
           </span>
         </p>
       </Button>
@@ -76,11 +72,11 @@ function CallForSpeakers(
             <div class="flex items-center gap-4">
               <Icon class="w-[44px] h-[44px]" id="Microphone" size={24} />
               <h3 class="font-semibold text-[#0D1717] text-[28px] leading-[32px] -tracking-[0.8px]">
-                {popupSpeaker.title}
+                {title}
               </h3>
             </div>
             <p class="text-[#616B6B] text-[20px] leading-[150%] -tracking-[0.2px]">
-              {popupSpeaker.description}
+              {description}
             </p>
             <RSVPInput type="speaker" />
           </div>

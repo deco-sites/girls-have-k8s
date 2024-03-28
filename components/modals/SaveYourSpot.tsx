@@ -6,20 +6,16 @@ import RSVPInput from "deco-sites/girls-have-k8s/islands/RSVPInput.tsx";
 import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
 
 export interface Props {
-  popupAttendee?: {
-    buttonText?: string;
-    buttonTextScope?: string;
-    description?: string;
-  };
+  buttonText?: string;
+  buttonTextScope?: string;
+  description?: string;
 }
 
 function SaveYourSpot(
   {
-    popupAttendee = {
-      buttonText: "Save your spot",
-      buttonTextScope: "(everyone)",
-      description: "Join us for an exclusive virtual lunch session!",
-    },
+    buttonText = "Save your spot",
+    buttonTextScope = "(everyone)",
+    description = "Join us for an exclusive virtual lunch session!",
   }: Props,
 ) {
   const id = useId();
@@ -36,9 +32,9 @@ function SaveYourSpot(
         onClick={handleModal}
       >
         <p class="text-neutral-900 font-medium text-[22px] text-center">
-          {popupAttendee.buttonText}{" "}
+          {buttonText}{" "}
           <span class="font-normal italic text-[1.125rem]">
-            {popupAttendee.buttonTextScope}
+            {buttonTextScope}
           </span>
         </p>
       </Button>
@@ -71,7 +67,7 @@ function SaveYourSpot(
           </div>
           <div class="space-y-8 lg:space-y-6">
             <p class="text-neutral-900 text-2xl font-bold leading-9">
-              {popupAttendee.description}
+              {description}
             </p>
             <RSVPInput type="attendee" />
           </div>

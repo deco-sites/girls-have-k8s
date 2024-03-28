@@ -6,40 +6,32 @@ import { ImageWidget } from "apps/admin/widgets.ts";
 import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
 
 export interface Props {
-  keynoteSpeaker?: {
-    label?: string;
-    title?: string;
-    description?: string;
-    photo?: ImageWidget;
-    buttonText?: string;
-  };
+  label?: string;
+  title?: string;
+  description?: string;
+  photo?: ImageWidget;
+  buttonText?: string;
 
-  popupKeyNoteSpeaker?: {
-    linkedinUrl?: string;
-    title?: string;
-    subtitle?: string;
-    description?: string;
-  };
+  linkedinUrlPopUp?: string;
+  titlePopUp?: string;
+  subtitlePopUp?: string;
+  descriptionPopUp?: string;
 }
 
 function LearnAbout(
   {
-    keynoteSpeaker = {
-      label: "🌟 Keynote Speaker",
-      title: "Fernanda Weiden",
-      description:
-        "Tech leader, former CTO of VTEX, rich history at companies like Meta and Google.",
-      photo: "https://via.placeholder.com/144x144",
-      buttonText: "Learn About Fernanda",
-    },
-    popupKeyNoteSpeaker = {
-      linkedinUrl: "https://www.linkedin.com/in/nandaweiden",
-      title: "Fernanda Weiden",
-      subtitle:
-        "Tech leader from LatAm, former CTO of VTEX, with a rich history at companies like Meta and Google.",
-      description:
-        "Fernanda will share her invaluable insights. She dedicated her career to scaling systems and organizations. She brings a wealth of knowledge on what it means to be an SRE and the vital role it plays in today's tech landscape. She is deeply passionate about mentoring, fostering growth, and promoting the inclusion of women in the technology workforce.",
-    },
+    label = "🌟 Keynote Speaker",
+    title = "Fernanda Weiden",
+    description =
+      "Tech leader, former CTO of VTEX, rich history at companies like Meta and Google.",
+    photo = "https://via.placeholder.com/144x144",
+    buttonText = "Learn About Fernanda",
+    linkedinUrlPopUp = "https://www.linkedin.com/in/nandaweiden",
+    titlePopUp = "Fernanda Weiden",
+    subtitlePopUp =
+      "Tech leader from LatAm, former CTO of VTEX, with a rich history at companies like Meta and Google.",
+    descriptionPopUp =
+      "Fernanda will share her invaluable insights. She dedicated her career to scaling systems and organizations. She brings a wealth of knowledge on what it means to be an SRE and the vital role it plays in today's tech landscape. She is deeply passionate about mentoring, fostering growth, and promoting the inclusion of women in the technology workforce.",
   }: Props,
 ) {
   const id = useId();
@@ -57,24 +49,24 @@ function LearnAbout(
       >
         <img
           class="w-[110px] h-[195px] object-cover lg:w-36 lg:h-36 rounded-[20px] lg:rounded-[100px]"
-          src={keynoteSpeaker.photo}
+          src={photo}
         />
         <div class="flex-col items-center lg:items-start gap-2 lg:gap-4 flex">
           <div class="flex-col lg:flex-row lg:gap-2 justify-center items-start flex">
             <div class="text-emerald-500 text-sm font-medium leading-[21px]">
-              {keynoteSpeaker.label}
+              {label}
             </div>
             <div class="text-white text-base font-bold leading-normal">
-              {keynoteSpeaker.title}
+              {title}
             </div>
           </div>
 
           <p class="max-w-[500.02px] text-zinc-400 text-base text-center lg:text-start font-normal leading-normal text-wrap">
-            {keynoteSpeaker.description}
+            {description}
           </p>
           <div class="px-4 py-1 max-lg:w-full lg:px-6 bg-white bg-opacity-5 rounded-[104.66px] border border-[#949E9E] flex justify-center items-center gap-2">
             <p class="text-[#949E9E] font-medium text-[12px]">
-              {keynoteSpeaker.buttonText}
+              {buttonText}
             </p>
             <div class="w-6 h-6">
               <Icon id="ArrowRight" size={24} />
@@ -112,7 +104,7 @@ function LearnAbout(
             <div class="h-[286px] lg:min-w-[212px] w-full lg:max-h-[376px]">
               <Image
                 class="h-full w-full object-cover rounded-[20px] border border-emerald-500"
-                src={keynoteSpeaker.photo || "/images/about.png"}
+                src={photo || "/images/about.png"}
                 alt="Deco Day"
                 width={150}
                 height={150}
@@ -123,11 +115,11 @@ function LearnAbout(
               <div class="flex flex-col gap-2">
                 <div class="flex justify-between items-center">
                   <h3 class="text-green-500 text-2xl font-semibold leading-[28.80px]">
-                    {popupKeyNoteSpeaker.title}
+                    {titlePopUp}
                   </h3>
                   <a
                     class="flex justify-center items-center w-10 h-10 p-2 bg-emerald-500 rounded-[71.76px] hover:opacity-70 transition-opacity duration-300"
-                    href={popupKeyNoteSpeaker.linkedinUrl}
+                    href={linkedinUrlPopUp}
                     target="_blank"
                   >
                     <Icon
@@ -138,11 +130,11 @@ function LearnAbout(
                   </a>
                 </div>
                 <h4 class="text-neutral-900 text-xl font-normal leading-[30px]">
-                  {popupKeyNoteSpeaker.subtitle}
+                  {subtitlePopUp}
                 </h4>
               </div>
               <p class="text-neutral-500 text-base font-normal leading-normal">
-                {popupKeyNoteSpeaker.description}
+                {descriptionPopUp}
               </p>
             </div>
           </div>
