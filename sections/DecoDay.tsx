@@ -328,15 +328,15 @@ export default function DecoDay({
             </div>
             <div class="z-10 w-full flex flex-col items-center">
               {/* <Icon id="GirlsBanner" size={400} class="w-full h-full" /> */}
-              <div class="w-full h-[200px]">
+              <div class="w-full">
                 <Picture preload={true}>
                   <Source
                     src={imageMobile || ""}
-                    width={200}
-                    height={200}
+                    width={397}
+                    height={183}
                   />
                   <img
-                    class="w-full h-full mb-6 object-contain"
+                    class="w-full h-full object-contain"
                     src={imageMobile || ""}
                     decoding="async"
                     loading={"lazy"}
@@ -431,8 +431,8 @@ export default function DecoDay({
                       <Picture preload={true}>
                         <Source
                           src={imageDesk || ""}
-                          width={250}
-                          height={250}
+                          width={487}
+                          height={280}
                         />
                         <img
                           class="w-full h-full mb-6 object-scale-down"
