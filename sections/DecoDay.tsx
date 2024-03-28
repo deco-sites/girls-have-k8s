@@ -261,6 +261,7 @@ export interface Props {
 
   popupSpeaker?: CallForSpeakersProps;
   popupAttendee?: SaveYourSpotProps;
+  presentedBy?: string;
 }
 
 const AnimatedElementMap: Record<
@@ -324,6 +325,7 @@ export default function DecoDay({
   keynoteSpeaker,
   popupSpeaker,
   popupAttendee,
+  presentedBy = "PRESENTED BY",
 }: Props & {
   animationElements: AnimationElement[];
   isDesktop: boolean;
@@ -413,7 +415,7 @@ export default function DecoDay({
 
             <div class="flex items-center gap-[3px] pb-2">
               <p class="text-white text-base font-bold uppercase">
-                PRESENTED BY
+                {presentedBy}
               </p>
               <Icon
                 class="w-[98.57px] h-[28.97px] mb-[8px]"
@@ -509,7 +511,7 @@ export default function DecoDay({
                   />
                   <div class="flex items-center self-end gap-[3px]">
                     <p class="text-white text-base font-bold uppercase">
-                      PRESENTED BY
+                      {presentedBy}
                     </p>
                     <Icon
                       class="w-[98.57px] h-[28.97px] mb-[8px]"
