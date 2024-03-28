@@ -22,7 +22,7 @@ export default function RSVPInput({
   const loading = useSignal(false);
   const feedbackMessage = useSignal({
     message: "",
-    buttonMessage: type === "speaker" ? "I wanna Speak!" : "Save your spot",
+    buttonMessage: type === "speaker" ? "I wanna speak!" : "Save your spot",
   });
   const statusResponse = useSignal("");
 
@@ -64,7 +64,7 @@ export default function RSVPInput({
   return (
     <div class="flex flex-col gap-3 w-full">
       <form
-        class="flex gap-3 p-1.5 lg:p-2 w-full rounded-[100px] justify-center items-center bg-[#EEF0F0]"
+        class="flex gap-3 p-1.5 lg:p-2 w-full rounded-[100px] justify-center items-center bg-[#EEF0F0] border-[#C9CFCF] border"
         onSubmit={(e) => {
           e.preventDefault();
           e.stopPropagation();

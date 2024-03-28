@@ -73,7 +73,7 @@ function LearnAbout(
           <div class="flex justify-between items-center">
             <div class="flex items-center">
               <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase lg:mr-[8px]">
-                PRESENT BY
+                PRESENTED BY
               </p>
               <Icon
                 class="w-[112.77px] h-[26.88px] lg:w-[75.17px] lg:h-[20.2px] lg:mb-[5px]"

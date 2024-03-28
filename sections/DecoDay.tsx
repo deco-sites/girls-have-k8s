@@ -287,7 +287,7 @@ export default function DecoDay({
             class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal leading-[21px]`}
           >
             <Icon id="CalendarEvent" size={20} class="w-[13px] lg:w-auto" />
-            <span>Monday April 4th, 12pm - 2pm BRT</span>
+            <span>Thursday April 4th, 12pm - 2pm BRT</span>
           </div>
           <div class="h-[21px] self-stretch origin-top-left mx-2 border border-white">
           </div>
@@ -349,7 +349,7 @@ export default function DecoDay({
 
         <div class="flex items-center gap-[3px] pb-2">
           <p class="text-white text-base font-bold uppercase">
-            PRESENT BY
+            PRESENTED BY
           </p>
           <Icon
             class="w-[98.57px] h-[28.97px] mb-[8px]"
@@ -363,7 +363,7 @@ export default function DecoDay({
       <div class="hidden lg:flex lg:flex-col lg:h-screen lg:w-screen lg:overflow-hidden">
         <div id="canvas" class="absolute z-[0] opacity-0"></div>
 
-        <div class="flex flex-col gap-12 p-4  bg-black  h-screen w-screen box-border">
+        <div class="flex flex-col gap-4 p-4  bg-black  h-screen w-screen box-border">
           {/* Gradiente */}
           <div class="h-full bg-black top-[80px] lg:right-[50px] lg:top-[-50px] absolute inset-0 flex justify-center items-center">
             <div class="lg:opacity-50 bg-[#02F67C] w-[16rem] h-[19rem] lg:w-96 lg:h-96 rounded-full blur-[200px]">
@@ -381,7 +381,7 @@ export default function DecoDay({
                 size={20}
                 class="w-[13px] lg:w-[17.90px]"
               />
-              <span>Monday April 4th, 12pm - 2pm BRT</span>
+              <span>Thursday April 4th, 12pm - 2pm BRT</span>
             </div>
             <div class="h-[21px] self-stretch origin-top-left mx-8 border border-white">
             </div>
@@ -443,7 +443,7 @@ export default function DecoDay({
               <LearnAbout image={imageAbout} />
               <div class="flex items-center self-end gap-[3px]">
                 <p class="text-white text-base font-bold uppercase">
-                  PRESENT BY
+                  PRESENTED BY
                 </p>
                 <Icon
                   class="w-[98.57px] h-[28.97px] mb-[8px]"
