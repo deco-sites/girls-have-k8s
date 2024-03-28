@@ -6,12 +6,16 @@ import RSVPInput from "deco-sites/girls-have-k8s/islands/RSVPInput.tsx";
 import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
 
 export interface Props {
+  buttonText?: string;
+  buttonTextScope?: string;
   title?: string;
   description?: string;
 }
 
 function CallForSpeakers(
   {
+    buttonText = "I wanna speak!",
+    buttonTextScope = "(girls only)",
     title = "Call for Speakers",
     description =
       "Have insights on SRE or a related topic you're eager to share? Interested in taking the virtual stage after Fernanda's keynote?",
@@ -31,9 +35,9 @@ function CallForSpeakers(
         onClick={handleModal}
       >
         <p class="text-white font-medium  text-[22px] text-center d">
-          I wanna speak!
+          {buttonText}
           <span class="font-normal italic text-[1.125rem]">
-            {" "} (girls only)
+            {" "} {buttonTextScope}
           </span>
         </p>
       </Button>
@@ -45,17 +49,7 @@ function CallForSpeakers(
         onClose={handleModal}
       >
         <div class="modal-box bg-white space-y-6 p-8 lg:p-12">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center">
-              <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase lg:mr-[8px]">
-                PRESENTED BY
-              </p>
-              <Icon
-                class="w-[112.77px] h-[26.88px] lg:w-[75.17px] lg:h-[20.2px] lg:mb-[5px]"
-                id="DecoGreenLogo"
-                size={24}
-              />
-            </div>
+          <div class="flex justify-end items-center">
             <label for={id}>
               <Icon
                 class="w-[26.67px] h-[26.67px] lg:w-[15.71px] lg:h-[15.71px]"

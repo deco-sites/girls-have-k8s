@@ -6,20 +6,32 @@ import { ImageWidget } from "apps/admin/widgets.ts";
 import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
 
 export interface Props {
+  label?: string;
   title?: string;
-  subtitle?: string;
   description?: string;
-  image?: ImageWidget;
+  photo?: ImageWidget;
+  buttonText?: string;
+
+  linkedinUrlPopUp?: string;
+  titlePopUp?: string;
+  subtitlePopUp?: string;
+  descriptionPopUp?: string;
 }
 
 function LearnAbout(
   {
+    label = "🌟 Keynote Speaker",
     title = "Fernanda Weiden",
-    subtitle =
-      "Tech leader from LatAm, former CTO of VTEX, with a rich history at companies like Meta and Google.",
     description =
+      "Tech leader, former CTO of VTEX, rich history at companies like Meta and Google.",
+    photo = "https://via.placeholder.com/144x144",
+    buttonText = "Learn About Fernanda",
+    linkedinUrlPopUp = "https://www.linkedin.com/in/nandaweiden",
+    titlePopUp = "Fernanda Weiden",
+    subtitlePopUp =
+      "Tech leader from LatAm, former CTO of VTEX, with a rich history at companies like Meta and Google.",
+    descriptionPopUp =
       "Fernanda will share her invaluable insights. She dedicated her career to scaling systems and organizations. She brings a wealth of knowledge on what it means to be an SRE and the vital role it plays in today's tech landscape. She is deeply passionate about mentoring, fostering growth, and promoting the inclusion of women in the technology workforce.",
-    image,
   }: Props,
 ) {
   const id = useId();
@@ -37,25 +49,24 @@ function LearnAbout(
       >
         <img
           class="w-[110px] h-[195px] object-cover lg:w-36 lg:h-36 rounded-[20px] lg:rounded-[100px]"
-          src={image}
+          src={photo}
         />
         <div class="flex-col items-center lg:items-start gap-2 lg:gap-4 flex">
           <div class="flex-col lg:flex-row lg:gap-2 justify-center items-start flex">
             <div class="text-emerald-500 text-sm font-medium leading-[21px]">
-              🌟 Keynote Speaker
+              {label}
             </div>
             <div class="text-white text-base font-bold leading-normal">
-              Fernanda Weiden
+              {title}
             </div>
           </div>
 
           <p class="max-w-[500.02px] text-zinc-400 text-base text-center lg:text-start font-normal leading-normal text-wrap">
-            Tech leader, former CTO of VTEX, rich history at companies like Meta
-            and Google.
+            {description}
           </p>
           <div class="px-4 py-1 max-lg:w-full lg:px-6 bg-white bg-opacity-5 rounded-[104.66px] border border-[#949E9E] flex justify-center items-center gap-2">
             <p class="text-[#949E9E] font-medium text-[12px]">
-              Learn about Fernanda
+              {buttonText}
             </p>
             <div class="w-6 h-6">
               <Icon id="ArrowRight" size={24} />
@@ -70,17 +81,7 @@ function LearnAbout(
         onClose={handleModal}
       >
         <div class="modal-box lg:max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center">
-              <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase lg:mr-[8px]">
-                PRESENTED BY
-              </p>
-              <Icon
-                class="w-[112.77px] h-[26.88px] lg:w-[75.17px] lg:h-[20.2px] lg:mb-[5px]"
-                id="DecoGreenLogo"
-                size={24}
-              />
-            </div>
+          <div class="flex justify-end items-center">
             <label for={id}>
               <Icon
                 class="w-[26.67px] h-[26.67px] lg:w-[15.71px] lg:h-[15.71px]"
@@ -93,7 +94,7 @@ function LearnAbout(
             <div class="h-[286px] lg:min-w-[212px] w-full lg:max-h-[376px]">
               <Image
                 class="h-full w-full object-cover rounded-[20px] border border-emerald-500"
-                src={image || "/images/about.png"}
+                src={photo || "/images/about.png"}
                 alt="Deco Day"
                 width={150}
                 height={150}
@@ -104,22 +105,26 @@ function LearnAbout(
               <div class="flex flex-col gap-2">
                 <div class="flex justify-between items-center">
                   <h3 class="text-green-500 text-2xl font-semibold leading-[28.80px]">
-                    {title}
+                    {titlePopUp}
                   </h3>
-                  <div class="flex justify-center items-center w-10 h-10 p-2 bg-emerald-500 rounded-[71.76px]">
+                  <a
+                    class="flex justify-center items-center w-10 h-10 p-2 bg-emerald-500 rounded-[71.76px] hover:opacity-70 transition-opacity duration-300"
+                    href={linkedinUrlPopUp}
+                    target="_blank"
+                  >
                     <Icon
                       id="LinkedinIcon"
                       class="w-6 h-6 fill-black"
                       size={24}
                     />
-                  </div>
+                  </a>
                 </div>
                 <h4 class="text-neutral-900 text-xl font-normal leading-[30px]">
-                  {subtitle}
+                  {subtitlePopUp}
                 </h4>
               </div>
               <p class="text-neutral-500 text-base font-normal leading-normal">
-                {description}
+                {descriptionPopUp}
               </p>
             </div>
           </div>

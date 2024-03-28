@@ -6,11 +6,17 @@ import RSVPInput from "deco-sites/girls-have-k8s/islands/RSVPInput.tsx";
 import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
 
 export interface Props {
+  buttonText?: string;
+  buttonTextScope?: string;
   description?: string;
 }
 
 function SaveYourSpot(
-  { description = "Join us for an exclusive virtual lunch session!" }: Props,
+  {
+    buttonText = "Save your spot",
+    buttonTextScope = "(everyone)",
+    description = "Join us for an exclusive virtual lunch session!",
+  }: Props,
 ) {
   const id = useId();
   const { displayModalSpot } = useUI();
@@ -26,8 +32,10 @@ function SaveYourSpot(
         onClick={handleModal}
       >
         <p class="text-neutral-900 font-medium text-[22px] text-center">
-          Save your spot{" "}
-          <span class="font-normal italic text-[1.125rem]">(everyone)</span>
+          {buttonText}{" "}
+          <span class="font-normal italic text-[1.125rem]">
+            {buttonTextScope}
+          </span>
         </p>
       </Button>
 
@@ -38,17 +46,7 @@ function SaveYourSpot(
         onClose={handleModal}
       >
         <div class="modal-box bg-white space-y-6 p-8 lg:p-12">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center">
-              <p class="hidden lg:block text-[#0D1717] text-[13px] font-semibold leading-[16px] uppercase lg:mr-[8px]">
-                PRESENTED BY
-              </p>
-              <Icon
-                class="w-[112.77px] h-[26.88px] lg:w-[75.17px] lg:h-[20.2px] lg:mb-[5px]"
-                id="DecoGreenLogo"
-                size={24}
-              />
-            </div>
+          <div class="flex justify-end items-center">
             <label for={id}>
               <Icon
                 class="w-[26.67px] h-[26.67px] lg:w-[15.71px] lg:h-[15.71px]"
