@@ -223,4 +223,32 @@ export const Shield = `<svg id="Shield" viewBox="0 0 44 44" fill="none" xmlns="h
 		</defs>
 	</svg>`;
 
-export const AvailableIcons = { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, QuestionMarkCircle, User, ShoppingCart, Bars3, Heart, MagnifyingGlass, XMark, Plus, Minus, MapPin, Phone, Elos, Mastercards, Visas, Pixs, Instagram, Truck, Discount, Return, CreditCards, Deco, Discord, FilterList, Trash, WhatsApp, ArrowsPointingOut, Star, Ruler, Message, Close, Zoom, Twitter, Facebook, Linkedin, Tiktok, Elo, Diners, Mastercard, Pix, Visa, Alert, AlertInfo, AlertSuccess, AlertWarning, AlertError, share, Left, Center, Right, SideToSide, Default, AlignJustified, AlignLeft, AlignCenter, AlignRight, Uppercase, Lettercase, Lowercase, LinkedinIcon, ArrowRight, DecoGreenLogo, DecoLogo, CalendarEvent, Gear, Card, Rocket, Shield };
+export const Microphone = `<svg id="Microphone" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<g clip-path="url(#clip0_115_261)">
+		<path d="M16.5 9.70721C16.5 8.24852 17.0795 6.84958 18.1109 5.81813C19.1424 4.78668 20.5413 4.20721 22 4.20721C23.4587 4.20721 24.8576 4.78668 25.8891 5.81813C26.9205 6.84958 27.5 8.24852 27.5 9.70721V18.8739C27.5 20.3326 26.9205 21.7315 25.8891 22.763C24.8576 23.7944 23.4587 24.3739 22 24.3739C20.5413 24.3739 19.1424 23.7944 18.1109 22.763C17.0795 21.7315 16.5 20.3326 16.5 18.8739V9.70721Z" stroke="#27AE6B" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M9.16675 18.8738C9.16675 22.2775 10.5188 25.5417 12.9255 27.9484C15.3323 30.3551 18.5965 31.7072 22.0001 31.7072C25.4037 31.7072 28.6679 30.3551 31.0746 27.9484C33.4813 25.5417 34.8334 22.2775 34.8334 18.8738" stroke="#27AE6B" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M14.6667 39.0405H29.3334" stroke="#27AE6B" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M22 31.7072V39.0405" stroke="#27AE6B" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+		</g>
+		<defs>
+		<clipPath id="clip0_115_261">
+		<rect width="44" height="44" fill="white" transform="translate(0 0.540527)"/>
+		</clipPath>
+		</defs>
+	</svg>`;
+
+export const MicButton = `<svg id="MicButton" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<g clip-path="url(#clip0_57_2788)">
+			<path d="M21.0993 11.9613C21.2902 10.5152 22.0478 9.20408 23.2053 8.31649C24.3629 7.4289 25.8256 7.0375 27.2718 7.2284C28.7179 7.41931 30.029 8.17687 30.9166 9.33444C31.8042 10.492 32.1956 11.9548 32.0047 13.4009L30.805 22.4887C30.6141 23.9349 29.8566 25.2459 28.699 26.1335C27.5414 27.0211 26.0787 27.4125 24.6325 27.2216C23.1864 27.0307 21.8753 26.2732 20.9877 25.1156C20.1001 23.958 19.7087 22.4953 19.8996 21.0491L21.0993 11.9613Z" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M12.6294 20.0894C12.184 23.4638 13.0972 26.8768 15.1683 29.5778C17.2393 32.2788 20.2985 34.0465 23.6728 34.4919C27.0472 34.9373 30.4602 34.0241 33.1612 31.953C35.8622 29.882 37.6299 26.8228 38.0753 23.4485" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M15.4429 40.8024L29.9834 42.7219" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+			<path d="M23.6729 34.4919L22.7131 41.7621" stroke="white" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+		</g>
+		<defs>
+			<clipPath id="clip0_57_2788">
+				<rect width="44" height="44" fill="white" transform="translate(5.94092 0.714111) rotate(-7)"/>
+			</clipPath>
+		</defs>
+	</svg>`;
+
+export const AvailableIcons = { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, QuestionMarkCircle, User, ShoppingCart, Bars3, Heart, MagnifyingGlass, XMark, Plus, Minus, MapPin, Phone, Elos, Mastercards, Visas, Pixs, Instagram, Truck, Discount, Return, CreditCards, Deco, Discord, FilterList, Trash, WhatsApp, ArrowsPointingOut, Star, Ruler, Message, Close, Zoom, Twitter, Facebook, Linkedin, Tiktok, Elo, Diners, Mastercard, Pix, Visa, Alert, AlertInfo, AlertSuccess, AlertWarning, AlertError, share, Left, Center, Right, SideToSide, Default, AlignJustified, AlignLeft, AlignCenter, AlignRight, Uppercase, Lettercase, Lowercase, LinkedinIcon, ArrowRight, DecoGreenLogo, DecoLogo, CalendarEvent, Gear, Card, Rocket, Shield, Microphone, MicButton };

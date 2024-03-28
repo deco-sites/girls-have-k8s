@@ -37,9 +37,9 @@ function ButtonIconSquare(
   return (
     <button
       style={`background-color: ${bg}; color: ${clr};`}
-      class={`elem absolute btn w-[max-content] p-[13.11px] rounded-xl border border-white justify-start items-start flex`}
+      class={`elem absolute w-[70.22px] h-[70.22px] p-2 rounded-xl border border-white justify-center items-center flex`}
     >
-      <Icon id={icon} size={24} class={`w-[24px] fill-[${color}] h-[24px]`} />
+      <Icon id={icon} size={44} class={`w-full fill-[${color}] h-full`} />
     </button>
   );
 }
@@ -70,9 +70,9 @@ function ButtonIconRounded(
   return (
     <button
       style={`background-color: ${bg}; color: ${clr};`}
-      class={`elem absolute p-[13.11px] rounded-full border border-white justify-start items-start flex`}
+      class={`elem absolute w-[68px] h-[68px] p-2 rounded-full border border-white justify-start items-start flex`}
     >
-      <Icon id={icon} size={24} class={`w-[24px] fill-[${color}] h-[24px]`} />
+      <Icon id={icon} size={44} class={`w-full fill-[${color}] h-full`} />
     </button>
   );
 }
@@ -182,7 +182,7 @@ function Button({ label, color, backgroundColor }: ButtonProps) {
   return (
     <button
       style={`background-color: ${bg}; color: ${clr};`}
-      class="elem btn w-[max-content] border-none absolute btn-sm xl:btn-md 2xl:btn-lg rounded-xl hover:brightness-[85%]"
+      class="elem btn w-[max-content] border-none absolute btn-md rounded-xl hover:brightness-[85%]"
     >
       {label}
     </button>
