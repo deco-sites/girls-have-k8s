@@ -37,7 +37,7 @@ function ButtonIconSquare(
   return (
     <button
       style={`background-color: ${bg}; color: ${clr};`}
-      class={`elem p-[13.11px] rounded-xl border border-white justify-start items-start flex`}
+      class={`elem absolute btn w-[max-content] p-[13.11px] rounded-xl border border-white justify-start items-start flex`}
     >
       <Icon id={icon} size={24} class={`w-[24px] fill-[${color}] h-[24px]`} />
     </button>
@@ -70,7 +70,7 @@ function ButtonIconRounded(
   return (
     <button
       style={`background-color: ${bg}; color: ${clr};`}
-      class={`elem p-[13.11px] rounded-full border border-white justify-start items-start flex`}
+      class={`elem absolute p-[13.11px] rounded-full border border-white justify-start items-start flex`}
     >
       <Icon id={icon} size={24} class={`w-[24px] fill-[${color}] h-[24px]`} />
     </button>
