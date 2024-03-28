@@ -7,6 +7,9 @@ import LearnAbout from "../islands/modals/LearnAbout.tsx";
 import CallForSpeakers from "../islands/modals/CallForSpeakers.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
+import { Props as LearnAboutProps } from "../components/modals/LearnAbout.tsx";
+import { Props as CallForSpeakersProps } from "../components/modals/CallForSpeakers.tsx";
+import { Props as SaveYourSpotProps } from "../components/modals/SaveYourSpot.tsx";
 
 /**
  * @title ButtonIconSquare
@@ -237,9 +240,29 @@ export interface Props {
   /** @default 4 */
   gravitySensation?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
+  header?: {
+    dateText?: string;
+    discordText?: string;
+    discordUrl?: string;
+  };
+
   imageDesk?: ImageWidget;
   imageMobile?: ImageWidget;
-  imageAbout?: ImageWidget;
+
+  subtitle?: string;
+  messageSpeaker?: string;
+
+  eventText?: {
+    title?: string;
+    description?: string;
+  };
+
+  keynoteSpeaker?: LearnAboutProps["keynoteSpeaker"];
+
+  popupKeyNoteSpeaker?: LearnAboutProps["popupKeyNoteSpeaker"];
+
+  popupSpeaker?: CallForSpeakersProps["popupSpeaker"];
+  popupAttendee?: SaveYourSpotProps["popupAttendee"];
 }
 
 const AnimatedElementMap: Record<
@@ -257,6 +280,7 @@ const AnimatedElementMap: Record<
   toggle: Toggle,
 };
 
+// deno-lint-ignore require-await
 export const loader = async (
   props: Props,
   req: Request,
@@ -281,10 +305,28 @@ export default function DecoDay({
   animationElements,
   // animationElementsMobile,
   gravitySensation,
-  imageAbout,
+  header = {
+    dateText: "Monday April 4th, 12pm - 2pm BRT",
+    discordText: "deco.cx/discord",
+    discordUrl: "https://discord.gg/NEyNv2E7J7?event=1221650438978273301",
+  },
   imageDesk,
   imageMobile,
   isDesktop,
+  subtitle = "An event dedicated to the female contributions in DevOps and SRE",
+  messageSpeaker = "Apply for a 5m lightning talk! < 5 slots available >",
+
+  eventText = {
+    title: "Join us for an exclusive virtual lunch session!",
+    description:
+      "Together we will explore the future of scalability, reliability, performance, and efficiency in technology. This event is a celebration of female voices in tech, but everyone is invited to attend and contribute.",
+  },
+
+  keynoteSpeaker,
+
+  popupKeyNoteSpeaker,
+  popupSpeaker,
+  popupAttendee,
 }: Props & {
   animationElements: AnimationElement[];
   isDesktop: boolean;
@@ -313,7 +355,7 @@ export default function DecoDay({
                 class={`open-button w-auto flex justify-center gap-[3px] text-white text-sm font-normal leading-[21px]`}
               >
                 <Icon id="CalendarEvent" size={20} class="w-[13px] lg:w-auto" />
-                <span>Thursday April 4th, 12pm - 2pm BRT</span>
+                <span>{header.dateText}</span>
               </div>
               <div class="h-[21px] self-stretch origin-top-left mx-2 border border-white">
               </div>
@@ -323,7 +365,7 @@ export default function DecoDay({
                 target="_blank"
               >
                 <Icon id="MapPin" size={20} class="w-[13px] lg:w-auto" />
-                <span>deco.cx/discord</span>
+                <span>{header.discordText}</span>
               </a>
             </div>
             <div class="z-10 w-full flex flex-col items-center">
@@ -345,32 +387,31 @@ export default function DecoDay({
               </div>
 
               <div class="text-center text-white text-lg font-normal">
-                An event dedicated to the female{" "}
-                <br />contributions in DevOps and SRE
+                {subtitle}
               </div>
             </div>
             <div class="z-10 flex flex-col items-center justify-center gap-6 w-full">
               <div class="text-center text-white text-base font-medium italic">
-                Apply for a 5m lightning talk! {"<"}5 slots available{">"}
+                {messageSpeaker}
               </div>
-              <CallForSpeakers />
+              <CallForSpeakers popupSpeaker={popupSpeaker} />
               <SaveYourSpot />
             </div>
 
             <div class="max-w-[398px] z-10 p-6 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 flex">
               <div class="text-white text-lg font-bold leading-[30px]">
-                Join us for an exclusive virtual lunch session!
+                {eventText.title}
               </div>
               <div class="text-zinc-400 text-sm font-normal leading-normal">
-                Together we will explore the future of scalability, reliability,
-                performance, and efficiency in technology. This event is a
-                celebration of female voices in tech, but everyone is invited to
-                attend and contribute.
+                {eventText.description}
               </div>
             </div>
 
             <div class="z-10 flex justify-center w-full">
-              <LearnAbout image={imageAbout} />
+              <LearnAbout
+                keynoteSpeaker={keynoteSpeaker}
+                popupKeyNoteSpeaker={popupKeyNoteSpeaker}
+              />
             </div>
 
             <div class="flex items-center gap-[3px] pb-2">
@@ -410,7 +451,7 @@ export default function DecoDay({
                     size={20}
                     class="w-[13px] lg:w-[17.90px]"
                   />
-                  <span>Thursday April 4th, 12pm - 2pm BRT</span>
+                  <span>{header.dateText}</span>
                 </div>
                 <div class="h-[21px] self-stretch origin-top-left mx-8 border border-white">
                 </div>
@@ -420,7 +461,7 @@ export default function DecoDay({
                   target="_blank"
                 >
                   <Icon id="MapPin" size={20} class="w-[13px] lg:w-[17.90px]" />
-                  <span>deco.cx/discord</span>
+                  <span>{header.discordText}</span>
                 </a>
               </div>
               {/* Content */}
@@ -450,9 +491,9 @@ export default function DecoDay({
                   </div>
                   <div class="flex flex-col items-center justify-center gap-6 w-full">
                     <div class="text-center text-white text-base font-medium font-['Albert Sans'] italic ">
-                      Apply for a 5m lightning talk! {"<"}5 slots available{">"}
+                      {messageSpeaker}
                     </div>
-                    <CallForSpeakers />
+                    <CallForSpeakers popupSpeaker={popupSpeaker} />
                     <SaveYourSpot />
                   </div>
                 </div>
@@ -460,16 +501,16 @@ export default function DecoDay({
                 <div class="flex flex-col gap-10">
                   <div class="max-w-[662.02px] h-[188px] p-8 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 inline-flex">
                     <div class="self-stretch text-white text-2xl font-bold leading-9">
-                      Join us for an exclusive virtual lunch session!
+                      {eventText.title}
                     </div>
                     <div class="self-stretch text-zinc-400 text-base font-normal leading-normal">
-                      Together we will explore the future of scalability,
-                      reliability, performance, and efficiency in technology.
-                      This event is a celebration of female voices in tech, but
-                      everyone is invited to attend and contribute.
+                      {eventText.description}
                     </div>
                   </div>
-                  <LearnAbout image={imageAbout} />
+                  <LearnAbout
+                    keynoteSpeaker={keynoteSpeaker}
+                    popupKeyNoteSpeaker={popupKeyNoteSpeaker}
+                  />
                   <div class="flex items-center self-end gap-[3px]">
                     <p class="text-white text-base font-bold uppercase">
                       PRESENTED BY

@@ -6,20 +6,40 @@ import { ImageWidget } from "apps/admin/widgets.ts";
 import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
 
 export interface Props {
-  title?: string;
-  subtitle?: string;
-  description?: string;
-  image?: ImageWidget;
+  keynoteSpeaker?: {
+    label?: string;
+    title?: string;
+    description?: string;
+    photo?: ImageWidget;
+    buttonText?: string;
+  };
+
+  popupKeyNoteSpeaker?: {
+    linkedinUrl?: string;
+    title?: string;
+    subtitle?: string;
+    description?: string;
+  };
 }
 
 function LearnAbout(
   {
-    title = "Fernanda Weiden",
-    subtitle =
-      "Tech leader from LatAm, former CTO of VTEX, with a rich history at companies like Meta and Google.",
-    description =
-      "Fernanda will share her invaluable insights. She dedicated her career to scaling systems and organizations. She brings a wealth of knowledge on what it means to be an SRE and the vital role it plays in today's tech landscape. She is deeply passionate about mentoring, fostering growth, and promoting the inclusion of women in the technology workforce.",
-    image,
+    keynoteSpeaker = {
+      label: "🌟 Keynote Speaker",
+      title: "Fernanda Weiden",
+      description:
+        "Tech leader, former CTO of VTEX, rich history at companies like Meta and Google.",
+      photo: "https://via.placeholder.com/144x144",
+      buttonText: "Learn About Fernanda",
+    },
+    popupKeyNoteSpeaker = {
+      linkedinUrl: "https://www.linkedin.com/in/nandaweiden",
+      title: "Fernanda Weiden",
+      subtitle:
+        "Tech leader from LatAm, former CTO of VTEX, with a rich history at companies like Meta and Google.",
+      description:
+        "Fernanda will share her invaluable insights. She dedicated her career to scaling systems and organizations. She brings a wealth of knowledge on what it means to be an SRE and the vital role it plays in today's tech landscape. She is deeply passionate about mentoring, fostering growth, and promoting the inclusion of women in the technology workforce.",
+    },
   }: Props,
 ) {
   const id = useId();
@@ -37,25 +57,24 @@ function LearnAbout(
       >
         <img
           class="w-[110px] h-[195px] object-cover lg:w-36 lg:h-36 rounded-[20px] lg:rounded-[100px]"
-          src={image}
+          src={keynoteSpeaker.photo}
         />
         <div class="flex-col items-center lg:items-start gap-2 lg:gap-4 flex">
           <div class="flex-col lg:flex-row lg:gap-2 justify-center items-start flex">
             <div class="text-emerald-500 text-sm font-medium leading-[21px]">
-              🌟 Keynote Speaker
+              {keynoteSpeaker.label}
             </div>
             <div class="text-white text-base font-bold leading-normal">
-              Fernanda Weiden
+              {keynoteSpeaker.title}
             </div>
           </div>
 
           <p class="max-w-[500.02px] text-zinc-400 text-base text-center lg:text-start font-normal leading-normal text-wrap">
-            Tech leader, former CTO of VTEX, rich history at companies like Meta
-            and Google.
+            {keynoteSpeaker.description}
           </p>
           <div class="px-4 py-1 max-lg:w-full lg:px-6 bg-white bg-opacity-5 rounded-[104.66px] border border-[#949E9E] flex justify-center items-center gap-2">
             <p class="text-[#949E9E] font-medium text-[12px]">
-              Learn about Fernanda
+              {keynoteSpeaker.buttonText}
             </p>
             <div class="w-6 h-6">
               <Icon id="ArrowRight" size={24} />
@@ -93,7 +112,7 @@ function LearnAbout(
             <div class="h-[286px] lg:min-w-[212px] w-full lg:max-h-[376px]">
               <Image
                 class="h-full w-full object-cover rounded-[20px] border border-emerald-500"
-                src={image || "/images/about.png"}
+                src={keynoteSpeaker.photo || "/images/about.png"}
                 alt="Deco Day"
                 width={150}
                 height={150}
@@ -104,7 +123,7 @@ function LearnAbout(
               <div class="flex flex-col gap-2">
                 <div class="flex justify-between items-center">
                   <h3 class="text-green-500 text-2xl font-semibold leading-[28.80px]">
-                    {title}
+                    {popupKeyNoteSpeaker.title}
                   </h3>
                   <div class="flex justify-center items-center w-10 h-10 p-2 bg-emerald-500 rounded-[71.76px]">
                     <Icon
@@ -115,11 +134,11 @@ function LearnAbout(
                   </div>
                 </div>
                 <h4 class="text-neutral-900 text-xl font-normal leading-[30px]">
-                  {subtitle}
+                  {popupKeyNoteSpeaker.subtitle}
                 </h4>
               </div>
               <p class="text-neutral-500 text-base font-normal leading-normal">
-                {description}
+                {popupKeyNoteSpeaker.description}
               </p>
             </div>
           </div>
