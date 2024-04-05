@@ -1,6 +1,7 @@
 import { AppContext } from "../apps/site.ts";
 
 export type Props = {
+  linkedin: string;
   email: string;
   isSpeaker: boolean;
 };
@@ -42,6 +43,8 @@ export default async (props: Props, _req: Request, ctx: AppContext) => {
   try {
     const email = props.email.toLowerCase().trim();
 
+    const linkedin = props.linkedin.toLowerCase().trim();
+
     if (!isEmailValid(email)) {
       return {
         ok: false,
@@ -59,7 +62,7 @@ export default async (props: Props, _req: Request, ctx: AppContext) => {
           "fields": {
             "Attendee (email)": email,
             "Save your spot / I wanna speak": props.isSpeaker
-              ? "True"
+              ? linkedin
               : "False",
           },
         },
