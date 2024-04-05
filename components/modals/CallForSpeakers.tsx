@@ -2,13 +2,14 @@ import Button from "deco-sites/girls-have-k8s/components/ui/Button.tsx";
 import Icon from "deco-sites/girls-have-k8s/components/ui/Icon.tsx";
 import Modal from "deco-sites/girls-have-k8s/components/ui/Modal.tsx";
 import { useId } from "deco-sites/girls-have-k8s/sdk/useId.ts";
-import RSVPInput from "deco-sites/girls-have-k8s/islands/RSVPInput.tsx";
+import RSVPInput from "deco-sites/girls-have-k8s/islands/RSVPInputSpeaker.tsx";
 import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
 
 export interface Props {
   buttonText?: string;
   buttonTextScope?: string;
   title?: string;
+  /** @format html */
   description?: string;
 }
 
@@ -48,8 +49,8 @@ function CallForSpeakers(
         loading="lazy"
         onClose={handleModal}
       >
-        <div class="modal-box bg-white space-y-6 p-8 lg:p-12">
-          <div class="flex justify-end items-center">
+        <div class="modal-box bg-white flex flex-col gap-5 p-8 lg:p-12 w-full max-w-[677px]">
+          <div class="flex justify-end items-center lg:hidden">
             <label for={id}>
               <Icon
                 class="w-[26.67px] h-[26.67px] lg:w-[15.71px] lg:h-[15.71px]"
@@ -58,7 +59,7 @@ function CallForSpeakers(
               />
             </label>
           </div>
-          <div class="space-y-8 lg:space-y-6">
+          <div class="flex flex-col gap-8 lg:gap-6">
             <div class="flex items-center gap-4">
               <Icon class="w-[44px] h-[44px]" id="Microphone" size={24} />
               <h3 class="font-semibold text-[#0D1717] text-[28px] leading-[32px] -tracking-[0.8px]">

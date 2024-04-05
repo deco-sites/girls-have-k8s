@@ -54,9 +54,9 @@ import * as $$$$$$41 from "./sections/Product/ProductShelfTabbed.tsx";
 import * as $$$$$$42 from "./sections/Product/SearchResult.tsx";
 import * as $$$$$$43 from "./sections/Product/ShelfWithImage.tsx";
 import * as $$$$$$44 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$45 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$46 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$47 from "./sections/SocialLinks.tsx";
+import * as $$$$$$46 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$47 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$45 from "./sections/SocialLinks.tsx";
 import * as $$$$$$48 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -119,9 +119,9 @@ const manifest = {
     "deco-sites/girls-have-k8s/sections/Product/SearchResult.tsx": $$$$$$42,
     "deco-sites/girls-have-k8s/sections/Product/ShelfWithImage.tsx": $$$$$$43,
     "deco-sites/girls-have-k8s/sections/Product/Wishlist.tsx": $$$$$$44,
-    "deco-sites/girls-have-k8s/sections/Social/InstagramPosts.tsx": $$$$$$45,
-    "deco-sites/girls-have-k8s/sections/Social/WhatsApp.tsx": $$$$$$46,
-    "deco-sites/girls-have-k8s/sections/SocialLinks.tsx": $$$$$$47,
+    "deco-sites/girls-have-k8s/sections/Social/InstagramPosts.tsx": $$$$$$46,
+    "deco-sites/girls-have-k8s/sections/Social/WhatsApp.tsx": $$$$$$47,
+    "deco-sites/girls-have-k8s/sections/SocialLinks.tsx": $$$$$$45,
     "deco-sites/girls-have-k8s/sections/Theme/Theme.tsx": $$$$$$48,
   },
   "actions": {

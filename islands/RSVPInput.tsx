@@ -62,9 +62,9 @@ export default function RSVPInput({
   }, [email.value]);
 
   return (
-    <div class="flex flex-col gap-3 w-full">
+    <div class="flex flex-col w-full">
       <form
-        class="flex gap-3 p-1.5 lg:p-2 w-full rounded-[100px] justify-center items-center bg-[#EEF0F0] border-[#C9CFCF] border"
+        class="flex gap-3 p-2 w-full rounded-[100px] justify-center items-center bg-[#EEF0F0] border-[#C9CFCF] border"
         onSubmit={(e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -81,17 +81,17 @@ export default function RSVPInput({
         <UiButton
           type="submit"
           loading={loading.value}
-          class={`rounded-[100px] min-h-[auto!important] border-0 font-[500] content-center text-[16px] lg:text-[20px] py-[9.95px] px-[19.9px] lg:px-[28px] lg:py-[14px] bg-[#02F67C] ${
+          class={`rounded-[100px] min-h-[auto!important] border-0 font-medium leading-normal content-center text-[18px] lg:text-[24px] py-[12px] px-[16px] lg:px-[28px] lg:py-[14px] bg-[#02F67C] ${
             statusResponse.value
-              ? "disabled cursor-auto hover:bg-[#02F67C]"
-              : ""
+              ? "disabled cursor-auto"
+              : "hover:bg-[#02F67C] hover:opacity-70"
           } text-black items-center`}
         >
           {feedbackMessage.value.buttonMessage}
         </UiButton>
       </form>
       {feedbackMessage.value && (
-        <span class="font-normal text-[#0D1717] text-center">
+        <span class="font-normal text-[#0D1717] text-center mt-2.5">
           {feedbackMessage.value.message}
         </span>
       )}
