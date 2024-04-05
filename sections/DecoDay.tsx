@@ -398,7 +398,7 @@ export default function DecoDay({
               <SaveYourSpot {...popupAttendee} />
             </div>
 
-            <div class="max-w-[398px] z-10 p-6 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 flex">
+            <div class="max-w-[398px] z-[9] p-6 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 flex">
               <div class="text-white text-lg font-bold leading-[30px]">
                 {eventText.title}
               </div>

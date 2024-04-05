@@ -48,7 +48,7 @@ function LearnAbout(
         onClick={handleModal}
       >
         <img
-          class="w-[110px] h-[195px] object-cover lg:w-36 lg:h-36 rounded-[20px] lg:rounded-[100px]"
+          class="w-[110px] h-full object-cover lg:w-36 lg:h-36 rounded-[20px] lg:rounded-[100px]"
           src={photo}
         />
         <div class="flex-col items-center lg:items-start gap-2 lg:gap-4 flex">
@@ -80,8 +80,8 @@ function LearnAbout(
         loading="lazy"
         onClose={handleModal}
       >
-        <div class="modal-box lg:max-w-[60%] bg-white space-y-6 p-8 lg:p-12">
-          <div class="flex justify-end items-center">
+        <div class="modal-box flex flex-col gap-5 w-full max-w-[696px] bg-white p-8 lg:p-12 ">
+          <div class="flex justify-end items-center lg:hidden">
             <label for={id}>
               <Icon
                 class="w-[26.67px] h-[26.67px] lg:w-[15.71px] lg:h-[15.71px]"
@@ -90,40 +90,40 @@ function LearnAbout(
               />
             </label>
           </div>
-          <div class="flex flex-col lg:flex-row justify-center gap-6 ">
-            <div class="h-[286px] lg:min-w-[212px] w-full lg:max-h-[376px]">
+          <div class="flex flex-col w-full lg:flex-row justify-center gap-6">
+            <div class="h-[286px] w-full lg:w-1/2 lg:h-full">
               <Image
-                class="h-full w-full object-cover rounded-[20px] border border-emerald-500"
+                class="h-full w-full aspect-[73/100] max-h-[376px] object-cover rounded-[20px] border border-emerald-500"
                 src={photo || "/images/about.png"}
                 alt="Deco Day"
-                width={150}
-                height={150}
+                width={145.5}
+                height={190}
               />
             </div>
 
-            <div class="flex flex-col justify-center gap-6 ">
+            <div class="flex flex-col lg:w-1/2 justify-center gap-6 overflow-auto">
               <div class="flex flex-col gap-2">
                 <div class="flex justify-between items-center">
-                  <h3 class="text-green-500 text-2xl font-semibold leading-[28.80px]">
+                  <h3 class="text-[#27AE6B] text-2xl lg:text-[1.75rem] font-semibold leading-[120%] lg:leading-[32px] tracking-[-0.8px]">
                     {titlePopUp}
                   </h3>
                   <a
-                    class="flex justify-center items-center w-10 h-10 p-2 bg-emerald-500 rounded-[71.76px] hover:opacity-70 transition-opacity duration-300"
+                    class="flex justify-center items-center w-8 h-8 p-1 rounded-[71.76px] hover:opacity-70 transition-opacity duration-300"
                     href={linkedinUrlPopUp}
                     target="_blank"
                   >
                     <Icon
                       id="LinkedinIcon"
-                      class="w-6 h-6 fill-black"
+                      class="w-8 h-8 fill-black"
                       size={24}
                     />
                   </a>
                 </div>
-                <h4 class="text-neutral-900 text-xl font-normal leading-[30px]">
+                <h4 class="text-[#0D1717] text-base font-normal leading-[150%] tracking-[-0.16px]">
                   {subtitlePopUp}
                 </h4>
               </div>
-              <p class="text-neutral-500 text-base font-normal leading-normal">
+              <p class="text-[#616B6B] text-sm lg:text-base font-normal leading-[150%] tracking-[-0.16px]">
                 {descriptionPopUp}
               </p>
             </div>
