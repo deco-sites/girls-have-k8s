@@ -43,7 +43,7 @@ export default async (props: Props, _req: Request, ctx: AppContext) => {
   try {
     const email = props.email.toLowerCase().trim();
 
-    const linkedin = props.linkedin.toLowerCase().trim();
+    const linkedin = props?.linkedin?.toLowerCase()?.trim();
 
     if (!isEmailValid(email)) {
       return {

@@ -77,6 +77,7 @@ export default function RSVPInput({
           disabled={loading.value}
           placeholder={placeholder}
           class="input pr-0 text-[16px] lg:text-[20px] bg-[#EEF0F0] leading-[34.886px] w-full rounded-[100px] flex justify-center items-center text-[#0D1717]  placeholder:text-[#0D1717]"
+          required
         />
         <UiButton
           type="submit"

@@ -81,6 +81,7 @@ export default function RSVPInput({
           disabled={loading.value}
           placeholder={firstPlaceholder}
           class="input p-2 pl-6 text-[16px] lg:text-[20px] bg-[#EEF0F0] border-[#C9CFCF] border leading-[34.886px] w-full rounded-[100px] flex justify-center items-center text-[#0D1717]  placeholder:text-[#0D1717]"
+          required
         />
         <input
           onInput={(e) => (email.value = e.currentTarget.value)}
@@ -88,6 +89,7 @@ export default function RSVPInput({
           disabled={loading.value}
           placeholder={secondPlaceholder}
           class="input p-2 pl-6 text-[16px] lg:text-[20px] bg-[#EEF0F0] border-[#C9CFCF] border leading-[34.886px] w-full rounded-[100px] flex justify-center items-center text-[#0D1717]  placeholder:text-[#0D1717]"
+          required
         />
         <UiButton
           type="submit"
