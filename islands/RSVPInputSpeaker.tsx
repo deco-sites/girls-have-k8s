@@ -93,12 +93,9 @@ export default function RSVPInput({
         />
         <UiButton
           type="submit"
+          disabled={statusResponse.value === "success"}
           loading={loading.value}
-          class={`rounded-[100px] min-h-[auto!important] border-0 font-medium leading-normal content-center text-[18px] lg:text-[24px] py-[12px] px-[16px] lg:px-[28px] lg:py-[14px] bg-[#02F67C] ${
-            statusResponse.value
-              ? "disabled cursor-auto"
-              : "hover:opacity-70 hover:bg-[#02F67C]"
-          } text-black items-center`}
+          class={`rounded-[100px] min-h-[auto!important] border-0 font-medium leading-normal content-center text-[18px] lg:text-[24px] py-[12px] px-[16px] lg:px-[28px] lg:py-[14px] bg-[#02F67C] disabled:bg-[#02F67C] disabled:text-[#0D1717] hover:opacity-70 hover:bg-[#02F67C] text-black items-center`}
         >
           {feedbackMessage.value.buttonMessage}
         </UiButton>
