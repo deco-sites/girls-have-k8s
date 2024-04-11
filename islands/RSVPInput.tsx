@@ -64,7 +64,7 @@ export default function RSVPInput({
   return (
     <div class="flex flex-col w-full">
       <form
-        class="flex gap-3 p-2 w-full rounded-[100px] justify-center items-center bg-[#EEF0F0] border-[#C9CFCF] border"
+        class="flex flex-col gap-6 w-full rounded-[100px] justify-center items-center"
         onSubmit={(e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -76,7 +76,7 @@ export default function RSVPInput({
           value={email.value}
           disabled={loading.value}
           placeholder={placeholder}
-          class="input pr-0 text-[16px] lg:text-[20px] bg-[#EEF0F0] leading-[34.886px] w-full rounded-[100px] flex justify-center items-center text-[#0D1717]  placeholder:text-[#0D1717]"
+          class="input p-2 pl-6 text-[16px] lg:text-[20px] bg-[#EEF0F0] border-[#C9CFCF] border leading-[34.886px] w-full rounded-[100px] flex justify-center items-center text-[#0D1717]  placeholder:text-[#0D1717]"
         />
         <UiButton
           type="submit"

@@ -44,14 +44,14 @@ function LearnAbout(
   return (
     <>
       <div
-        class="w-full max-lg:max-w-[398px] p-6 lg:p-2 gap-6 bg-white bg-opacity-5 rounded-[20px] lg:rounded-[999px] border border-white border-opacity-20 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
+        class="w-full max-lg:max-w-[398px] p-6 lg:p-4 gap-6 bg-white bg-opacity-5 rounded-[20px] lg:rounded-[999px] border border-white border-opacity-20 flex hover:opacity-75 transition-opacity duration-300 hover:cursor-pointer"
         onClick={handleModal}
       >
         <img
           class="w-[110px] h-full object-cover lg:w-36 lg:h-36 rounded-[20px] lg:rounded-[100px]"
           src={photo}
         />
-        <div class="flex-col items-center lg:items-start gap-2 lg:gap-4 flex">
+        <div class="flex-col items-center lg:items-start gap-2 lg:gap-4 flex lg:pr-4">
           <div class="flex-col lg:flex-row lg:gap-2 justify-center items-start flex">
             <div class="text-emerald-500 text-sm font-medium leading-[21px]">
               {label}
