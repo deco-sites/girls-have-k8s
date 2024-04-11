@@ -496,7 +496,7 @@ export default function DecoDay({
                   </div>
                 </div>
 
-                <div class="flex flex-col gap-10">
+                <div class="flex flex-col gap-10 max-w-[662px]">
                   <div class="max-w-[662.02px] h-[188px] p-8 bg-white bg-opacity-5 rounded-[20px] border border-white border-opacity-20 flex-col justify-center items-center gap-4 inline-flex">
                     <div class="self-stretch text-white text-2xl font-bold leading-9">
                       {eventText.title}
