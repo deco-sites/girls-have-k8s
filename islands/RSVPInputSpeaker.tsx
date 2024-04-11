@@ -81,6 +81,7 @@ export default function RSVPInput({
           disabled={loading.value}
           placeholder={firstPlaceholder}
           class="input p-2 pl-6 text-[16px] lg:text-[20px] bg-[#EEF0F0] border-[#C9CFCF] border leading-[34.886px] w-full rounded-[100px] flex justify-center items-center text-[#0D1717]  placeholder:text-[#0D1717]"
+          required
         />
         <input
           onInput={(e) => (email.value = e.currentTarget.value)}
@@ -88,15 +89,13 @@ export default function RSVPInput({
           disabled={loading.value}
           placeholder={secondPlaceholder}
           class="input p-2 pl-6 text-[16px] lg:text-[20px] bg-[#EEF0F0] border-[#C9CFCF] border leading-[34.886px] w-full rounded-[100px] flex justify-center items-center text-[#0D1717]  placeholder:text-[#0D1717]"
+          required
         />
         <UiButton
           type="submit"
+          disabled={statusResponse.value === "success"}
           loading={loading.value}
-          class={`rounded-[100px] min-h-[auto!important] border-0 font-medium leading-normal content-center text-[18px] lg:text-[24px] py-[12px] px-[16px] lg:px-[28px] lg:py-[14px] bg-[#02F67C] ${
-            statusResponse.value
-              ? "disabled cursor-auto"
-              : "hover:opacity-70 hover:bg-[#02F67C]"
-          } text-black items-center`}
+          class={`rounded-[100px] min-h-[auto!important] border-0 font-medium leading-normal content-center text-[18px] lg:text-[24px] py-[12px] px-[16px] lg:px-[28px] lg:py-[14px] bg-[#02F67C] disabled:bg-[#02F67C] disabled:text-[#0D1717] hover:opacity-70 hover:bg-[#02F67C] text-black items-center`}
         >
           {feedbackMessage.value.buttonMessage}
         </UiButton>

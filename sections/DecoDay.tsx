@@ -1,7 +1,6 @@
 import { JSX } from "preact/jsx-runtime";
 import Icon, { AvailableIcons } from "../components/ui/Icon.tsx";
 import { AppContext } from "../apps/site.ts";
-import Image from "apps/website/components/Image.tsx";
 import SaveYourSpot from "../islands/modals/SaveYourSpot.tsx";
 import LearnAbout from "../islands/modals/LearnAbout.tsx";
 import CallForSpeakers from "../islands/modals/CallForSpeakers.tsx";
