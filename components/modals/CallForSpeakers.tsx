@@ -1,9 +1,9 @@
-import Button from "deco-sites/girls-have-k8s/components/ui/Button.tsx";
-import Icon from "deco-sites/girls-have-k8s/components/ui/Icon.tsx";
-import Modal from "deco-sites/girls-have-k8s/components/ui/Modal.tsx";
-import { useId } from "deco-sites/girls-have-k8s/sdk/useId.ts";
-import RSVPInput from "deco-sites/girls-have-k8s/islands/RSVPInputSpeaker.tsx";
-import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
+import Button from "site/components/ui/Button.tsx";
+import Icon from "site/components/ui/Icon.tsx";
+import Modal from "site/components/ui/Modal.tsx";
+import { useId } from "site/sdk/useId.ts";
+import RSVPInput from "site/islands/RSVPInputSpeaker.tsx";
+import { useUI } from "site/sdk/useUI.ts";
 
 export interface Props {
   buttonText?: string;

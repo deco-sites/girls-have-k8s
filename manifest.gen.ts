@@ -15,24 +15,24 @@ import * as $$$$$$$4 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
   "loaders": {
-    "deco-sites/girls-have-k8s/loaders/availableIcons.ts": $$$$0,
-    "deco-sites/girls-have-k8s/loaders/icons.ts": $$$$1,
+    "site/loaders/availableIcons.ts": $$$$0,
+    "site/loaders/icons.ts": $$$$1,
   },
   "sections": {
-    "deco-sites/girls-have-k8s/sections/Animation/Animation.tsx": $$$$$$$0,
-    "deco-sites/girls-have-k8s/sections/DecoDay.tsx": $$$$$$$1,
-    "deco-sites/girls-have-k8s/sections/Gallery.tsx": $$$$$$$2,
-    "deco-sites/girls-have-k8s/sections/SocialLinks.tsx": $$$$$$$3,
-    "deco-sites/girls-have-k8s/sections/Theme/Theme.tsx": $$$$$$$4,
+    "site/sections/Animation/Animation.tsx": $$$$$$$0,
+    "site/sections/DecoDay.tsx": $$$$$$$1,
+    "site/sections/Gallery.tsx": $$$$$$$2,
+    "site/sections/SocialLinks.tsx": $$$$$$$3,
+    "site/sections/Theme/Theme.tsx": $$$$$$$4,
   },
   "actions": {
-    "deco-sites/girls-have-k8s/actions/submitRsvp.ts": $$$$$$$$$$0,
+    "site/actions/submitRsvp.ts": $$$$$$$$$$0,
   },
   "apps": {
-    "deco-sites/girls-have-k8s/apps/decohub.ts": $$$$$$$$$$$$0,
-    "deco-sites/girls-have-k8s/apps/site.ts": $$$$$$$$$$$$1,
+    "site/apps/decohub.ts": $$$$$$$$$$$$0,
+    "site/apps/site.ts": $$$$$$$$$$$$1,
   },
-  "name": "deco-sites/girls-have-k8s",
+  "name": "site",
   "baseUrl": import.meta.url,
 };
 

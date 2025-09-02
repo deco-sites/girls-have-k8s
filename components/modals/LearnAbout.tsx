@@ -1,9 +1,9 @@
-import Icon from "deco-sites/girls-have-k8s/components/ui/Icon.tsx";
-import Modal from "deco-sites/girls-have-k8s/components/ui/Modal.tsx";
-import { useId } from "deco-sites/girls-have-k8s/sdk/useId.ts";
+import Icon from "site/components/ui/Icon.tsx";
+import Modal from "site/components/ui/Modal.tsx";
+import { useId } from "site/sdk/useId.ts";
 import Image from "apps/website/components/Image.tsx";
 import { ImageWidget } from "apps/admin/widgets.ts";
-import { useUI } from "deco-sites/girls-have-k8s/sdk/useUI.ts";
+import { useUI } from "site/sdk/useUI.ts";
 
 export interface Props {
   label?: string;

@@ -1,7 +1,7 @@
-import UiButton from "deco-sites/girls-have-k8s/components/ui/Button.tsx";
+import UiButton from "site/components/ui/Button.tsx";
 import { useSignal } from "@preact/signals";
 import { useCallback, useEffect } from "preact/hooks";
-import { invoke } from "deco-sites/girls-have-k8s/runtime.ts";
+import { invoke } from "site/runtime.ts";
 
 interface Props {
   type?: "speaker" | "attendee";
@@ -32,7 +32,7 @@ export default function RSVPInput({
     async () => {
       loading.value = true;
       const invokeResponse = await invoke({
-        key: "deco-sites/girls-have-k8s/actions/submitRsvp.ts",
+        key: "site/actions/submitRsvp.ts",
         props: {
           linkedin: linkedin.value,
           email: email.value,
