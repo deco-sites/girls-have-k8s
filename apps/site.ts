@@ -1,13 +1,8 @@
-import { App, AppContext as AC } from "deco/mod.ts";
 import website, { Props } from "apps/website/mod.ts";
-
 import manifest, { Manifest } from "../manifest.gen.ts";
-
+import { type App, type AppContext as AC } from "@deco/deco";
 type WebsiteApp = ReturnType<typeof website>;
-
-export default function Site(
-  state: Props,
-): App<Manifest, Props, [
+export default function Site(state: Props): App<Manifest, Props, [
   WebsiteApp,
 ]> {
   return {
@@ -18,7 +13,6 @@ export default function Site(
     ],
   };
 }
-
 export type SiteApp = ReturnType<typeof Site>;
 export type AppContext = AC<SiteApp>;
 export { onBeforeResolveProps, Preview } from "apps/website/mod.ts";
