@@ -8,7 +8,7 @@ import * as $RSVPInputSpeaker from "./islands/RSVPInputSpeaker.tsx";
 import * as $modals_CallForSpeakers from "./islands/modals/CallForSpeakers.tsx";
 import * as $modals_LearnAbout from "./islands/modals/LearnAbout.tsx";
 import * as $modals_SaveYourSpot from "./islands/modals/SaveYourSpot.tsx";
-import { type Manifest } from "$fresh/server.ts";
+import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
